@@ -6,7 +6,15 @@ namespace PlantTycoonHelper
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            CalculateFlowers();
+            Console.ReadLine();
+        }
+
+        static void CalculateFlowers()
+        {
+            var calculator = new Calculator();
+            var flowerTuples = calculator.CalculateFlowers();
+            flowerTuples.ForEach(x => Console.WriteLine($"{x.FlowerA.ToString()} + {x.FlowerB.ToString()}"));
         }
     }
 }
