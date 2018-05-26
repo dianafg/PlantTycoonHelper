@@ -1,4 +1,6 @@
-﻿namespace PlantTycoon.Domain
+﻿using System;
+
+namespace PlantTycoon.Domain
 {
     public class FlowerFormula
     {
@@ -14,6 +16,21 @@
             this.FlowerA = flowerA;
             this.FlowerB = flowerB;
             this.Result = result;
+        }
+
+        public static FlowerFormula CreateFromFlowerTypeNames(string flowerTypeNameA, string flowerTypeNameB)
+        {
+            var flowerTypeA = (FlowerType)Enum.Parse(typeof(FlowerType), flowerTypeNameA);
+            var flowerTypeB = (FlowerType)Enum.Parse(typeof(FlowerType), flowerTypeNameB);
+            return new FlowerFormula(flowerTypeA, flowerTypeB);
+        }
+
+        public static FlowerFormula CreateFromFlowerTypeNames(string flowerTypeNameA, string flowerTypeNameB, string flowerTypeNameResult)
+        {
+            var flowerTypeResult = (FlowerType)Enum.Parse(typeof(FlowerType), flowerTypeNameResult);
+            var flowerFormula = CreateFromFlowerTypeNames(flowerTypeNameA, flowerTypeNameB);
+            flowerFormula.Result = flowerTypeResult;
+            return flowerFormula;
         }
     }
 }

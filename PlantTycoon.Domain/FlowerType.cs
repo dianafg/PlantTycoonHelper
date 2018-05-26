@@ -1,17 +1,37 @@
-﻿namespace PlantTycoon.Domain
+﻿using System;
+
+namespace PlantTycoon.Domain
 {
     public enum FlowerType
     {
-        Citrus,
-        Spotted,
+        Aureus,
+        Blazing,
         Bluestar,
+        Citrus,
+        Daisy,
+        Fabled,
+        Fourpetal,
         Fragrant,
         Jalapa,
-        Daisy,
-        Fourpetal,
-        Aureus,
-        Rosaceae,
         Mystic,
-        Nox
+        Nox,
+        Rosaceae,
+        Spotted,
+        Viola
+    }
+
+    public static class FlowerTypeExtensions
+    {
+        public static FlowerType? ToFlowerType(this string flowerTypeName)
+        {
+            try
+            {
+                return (FlowerType)Enum.Parse(typeof(FlowerType), flowerTypeName, ignoreCase: true);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
     }
 }

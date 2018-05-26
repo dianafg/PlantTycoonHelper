@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace PlantTycoonHelper
 {
-    public class Calculator
+    public class FlowerCalculator
     {
         public void InitializeEmptyFlowerResults()
         {
@@ -37,19 +37,11 @@ namespace PlantTycoonHelper
         public List<FlowerFormula> CalculateAllOrderedFlowerFormulasWithEmptyResult()
         {
             var flowerFormulas = new List<FlowerFormula>();
-            
-            //foreach (var flowerTypeAName in Enum.GetNames(typeof(FlowerType)).OrderBy(x => x))
-            //    foreach (var flowerTypeBName in Enum.GetNames(typeof(FlowerType)).OrderBy(x => x).Where(x => x.CompareTo(flowerTypeAName) > 0))
-            //    {
-            //        flowerFormulas.Add(new FlowerFormula((FlowerType)Enum.Parse(typeof(FlowerType), flowerTypeAName), 
-            //            (FlowerType)Enum.Parse(typeof(FlowerType), flowerTypeBName)));
-            //    }
-            //return flowerFormulas;
 
             var allFlowerTypeNamesOrdered = GetFlowerTypeNamesOrdered();
             allFlowerTypeNamesOrdered
                 .ForEach(flowerTypeNameA => GetFlowerTypeNamesOrderedGreaterThan(flowerTypeNameA)
-                    .ForEach(flowerTypeNameB => flowerFormulas.Add(CreateFlowerFormulaFromFlowerTypeNames(flowerTypeNameA, flowerTypeNameB))));
+                    .ForEach(flowerTypeNameB => flowerFormulas.Add(FlowerFormula.CreateFromFlowerTypeNames(flowerTypeNameA, flowerTypeNameB))));
 
             return flowerFormulas;
         }
@@ -64,19 +56,16 @@ namespace PlantTycoonHelper
             return Enum.GetNames(typeof(FlowerType)).OrderBy(x => x).Where(x => x.CompareTo(cutFlowerTypeName) > 0).ToList();
         }
 
-        protected FlowerFormula CreateFlowerFormulaFromFlowerTypeNames(string flowerTypeNameA, string flowerTypeNameB)
+        public List<FlowerFormula> ReportForFlowerType(FlowerType flowerType)
         {
-            var flowerTypeA = (FlowerType)Enum.Parse(typeof(FlowerType), flowerTypeNameA);
-            var flowerTypeB = (FlowerType)Enum.Parse(typeof(FlowerType), flowerTypeNameB);
-            return new FlowerFormula(flowerTypeA, flowerTypeB);
-        }
-
-        protected FlowerFormula CreateFlowerFormulaFromFlowerTypeNames(string flowerTypeNameA, string flowerTypeNameB, string flowerTypeNameResult)
-        {
-            var flowerTypeResult = (FlowerType)Enum.Parse(typeof(FlowerType), flowerTypeNameResult);
-            var flowerFormula = CreateFlowerFormulaFromFlowerTypeNames(flowerTypeNameA, flowerTypeNameB);
-            flowerFormula.Result = flowerTypeResult;
-            return flowerFormula;
+            using (var dbContext = new PlantTycoonContext())
+            {
+                var flowerFormulas = dbContext.FlowerFormulas
+                    .Where(x => x.FlowerA == flowerType || x.FlowerB == flowerType)
+                    .OrderBy(x => x.FlowerA.ToString())
+                    .ThenBy(x => x.FlowerB.ToString());
+                return flowerFormulas.ToList();
+            }
         }
     }
 }

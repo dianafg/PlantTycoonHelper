@@ -1,41 +1,105 @@
 ﻿using PlantTycoon.Domain;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace PlantTycoonHelper
 {
     class Program
     {
+        private static FlowerCalculator flowerCalculator;
+        private static PlantCalculator plantCalculator;
+        private static FormulaSeeder formulaSeeder;
+
         static void Main(string[] args)
         {
-            CalculateFlowers();
-            Console.ReadLine();
+            flowerCalculator = new FlowerCalculator();
+            plantCalculator = new PlantCalculator();
+            formulaSeeder = new FormulaSeeder(flowerCalculator, plantCalculator);
 
-            //var calculator = new Calculator();
-            //SeedWithSomeResults(calculator);
+            //CalculateFlowers();
+            //CalculatePlants();
+
+            ReseedFormulas();
+
+            LoopForFlowerOrPlantType();
         }
 
-        static void SeedWithSomeResults(Calculator calculator)
+        static void LoopForFlowerOrPlantType()
         {
-            calculator.InitializeEmptyFlowerResults();
+            while (true)
+            {
+                Console.WriteLine("\nEnter flower or plant type:");
+                var input = Console.ReadLine();
+                Console.WriteLine("---------------");
+                var parsedInput = ParseFlowerOrPlantInput(input);
+                switch (parsedInput)
+                {
+                    case string command:
+                        switch (command)
+                        {
+                            case "LF":  //List flowers
+                                var flowerFormulasWithEmptyResult = new List<FlowerFormula>();
+                                var flowerTypes = Enum.GetValues(typeof(FlowerType));
+                                foreach (var flowerType in flowerTypes)
+                                {
+                                    var flowerFormulasByFlowerType = flowerCalculator.ReportForFlowerType((FlowerType)flowerType);
+                                    flowerFormulasWithEmptyResult.AddRange(flowerFormulasByFlowerType.Where(x => x.Result == null));
+                                }
+                                flowerFormulasWithEmptyResult
+                                    .ForEach(x => Console.WriteLine($"{x.FlowerA.ToString()} + {x.FlowerB.ToString()} = {x.Result?.ToString()}"));
+                                break;
 
-            calculator.SetFlowerFormula(FlowerType.Bluestar, FlowerType.Citrus, FlowerType.Fragrant);
-            calculator.SetFlowerFormula(FlowerType.Bluestar, FlowerType.Spotted, FlowerType.Daisy);
-            calculator.SetFlowerFormula(FlowerType.Citrus, FlowerType.Spotted, FlowerType.Jalapa);
+                            case "LP":  //List plants
+                                break;
 
-            calculator.SetFlowerFormula(FlowerType.Citrus, FlowerType.Fragrant, FlowerType.Aureus);
-            calculator.SetFlowerFormula(FlowerType.Citrus, FlowerType.Jalapa, FlowerType.Fourpetal);
+                            default:
+                                Console.WriteLine("Wrong input");
+                                break;
+                        }
+                        break;
 
-            calculator.SetFlowerFormula(FlowerType.Bluestar, FlowerType.Rosaceae, FlowerType.Mystic);
-            calculator.SetFlowerFormula(FlowerType.Spotted, FlowerType.Fragrant, FlowerType.Mystic);
-            calculator.SetFlowerFormula(FlowerType.Fragrant, FlowerType.Rosaceae, FlowerType.Jalapa);
-            calculator.SetFlowerFormula(FlowerType.Mystic, FlowerType.Spotted, FlowerType.Nox);
+                    case FlowerType flowerType:
+                        var flowerFormulas = flowerCalculator.ReportForFlowerType(flowerType);
+                        flowerFormulas.ForEach(x => Console.WriteLine($"{x.FlowerA.ToString()} + {x.FlowerB.ToString()} = {x.Result?.ToString()}"));
+                        break;
+
+                    case PlantType plantType:
+                        var plantFormulas = plantCalculator.ReportForPlantType(plantType);
+                        plantFormulas.ForEach(x => Console.WriteLine($"{x.PlantA.ToString()} + {x.PlantB.ToString()} = {x.Result?.ToString()}"));
+                        break;
+
+                    default:
+                        Console.WriteLine("Wrong input");
+                        break;
+                }
+            }
         }
 
-        static void CalculateFlowers()
+        private static object ParseFlowerOrPlantInput(string input)
         {
-            var calculator = new Calculator();
+            object parsedInput = input.ToFlowerType() as object ?? input.ToPlantType() as object ?? input;
+            return parsedInput;
+        }
+
+        static void ReseedFormulas()
+        {
+            formulaSeeder.ReseedFlowers();
+            formulaSeeder.ReseedPlants();
+        }
+
+        static void ListFlowerCombinations()
+        {
+            var calculator = new FlowerCalculator();
             var flowerTuples = calculator.CalculateAllOrderedFlowerFormulasWithEmptyResult();
             flowerTuples.ForEach(x => Console.WriteLine($"{x.FlowerA.ToString()} + {x.FlowerB.ToString()}"));
+        }
+
+        static void ListPlantCombinations()
+        {
+            var calculator = new PlantCalculator();
+            var plantTuples = calculator.CalculateAllOrderedPlantFormulasWithEmptyResult();
+            plantTuples.ForEach(x => Console.WriteLine($"{x.PlantA.ToString()} + {x.PlantB.ToString()}"));
         }
     }
 }
