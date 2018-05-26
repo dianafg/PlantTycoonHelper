@@ -7,6 +7,8 @@
         public PlantType PlantB { get; protected set; }
         public PlantType? Result { get; set; }
 
+        protected PlantFormula() { }   //For EF
+
         public PlantFormula(PlantType plantA, PlantType plantB, PlantType? result = null)
         {
             this.PlantA = plantA;

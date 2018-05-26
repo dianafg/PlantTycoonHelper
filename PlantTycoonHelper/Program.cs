@@ -7,11 +7,11 @@ namespace PlantTycoonHelper
     {
         static void Main(string[] args)
         {
-            //CalculateFlowers();
-            //Console.ReadLine();
+            CalculateFlowers();
+            Console.ReadLine();
 
-            var calculator = new Calculator();
-            SeedWithSomeResults(calculator);
+            //var calculator = new Calculator();
+            //SeedWithSomeResults(calculator);
         }
 
         static void SeedWithSomeResults(Calculator calculator)
@@ -34,7 +34,7 @@ namespace PlantTycoonHelper
         static void CalculateFlowers()
         {
             var calculator = new Calculator();
-            var flowerTuples = calculator.CalculateFlowers();
+            var flowerTuples = calculator.CalculateAllOrderedFlowerFormulasWithEmptyResult();
             flowerTuples.ForEach(x => Console.WriteLine($"{x.FlowerA.ToString()} + {x.FlowerB.ToString()}"));
         }
     }
