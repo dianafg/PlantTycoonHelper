@@ -10,6 +10,8 @@
         Daisy,
         Fourpetal,
         Aureus,
-        Rosaceae
+        Rosaceae,
+        Mystic,
+        Nox
     }
 }
