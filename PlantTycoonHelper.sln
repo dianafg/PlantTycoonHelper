@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlantTycoonHelper", "PlantT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlantTycoon.Domain", "PlantTycoon.Domain\PlantTycoon.Domain.csproj", "{D088B276-DAF9-45D4-908B-257944076BAD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlantTycoon.Data", "PlantTycoon.Data\PlantTycoon.Data.csproj", "{F1D3AEDB-ED97-4FAA-A9D7-B7D9C3B507DF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D088B276-DAF9-45D4-908B-257944076BAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D088B276-DAF9-45D4-908B-257944076BAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D088B276-DAF9-45D4-908B-257944076BAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1D3AEDB-ED97-4FAA-A9D7-B7D9C3B507DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1D3AEDB-ED97-4FAA-A9D7-B7D9C3B507DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1D3AEDB-ED97-4FAA-A9D7-B7D9C3B507DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1D3AEDB-ED97-4FAA-A9D7-B7D9C3B507DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

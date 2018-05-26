@@ -2,8 +2,9 @@
 {
     public class FlowerFormula
     {
-        public FlowerType FlowerA { get; set; }
-        public FlowerType FlowerB { get; set; }
+        public int Id { get; protected set; }
+        public FlowerType FlowerA { get; protected set; }
+        public FlowerType FlowerB { get; protected set; }
         public FlowerType? Result { get; set; }
 
         public FlowerFormula(FlowerType flowerA, FlowerType flowerB, FlowerType? result = null)

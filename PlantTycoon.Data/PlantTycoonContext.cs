@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PlantTycoon.Domain;
 
-namespace PlantTycoonHelper
+namespace PlantTycoon.Data
 {
     public class PlantTycoonContext : DbContext
     {
