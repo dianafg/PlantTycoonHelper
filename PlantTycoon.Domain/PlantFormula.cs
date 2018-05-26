@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace PlantTycoonHelper.Model
+﻿namespace PlantTycoon.Domain
 {
-    public class PlantTuple
+    public class PlantFormula
     {
         public PlantType PlantA { get; set; }
         public PlantType PlantB { get; set; }
 
-        public PlantTuple(PlantType plantA, PlantType plantB)
+        public PlantFormula(PlantType plantA, PlantType plantB)
         {
             this.PlantA = plantA;
             this.PlantB = plantB;

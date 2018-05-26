@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace PlantTycoonHelper.Model
+﻿namespace PlantTycoon.Domain
 {
     public enum FlowerType
     {
         Citrus,
         Spotted,
         Bluestar,
-        Fragant,
+        Fragrant,
         Jalapa,
         Daisy,
         Fourpetal,

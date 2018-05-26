@@ -1,8 +1,7 @@
-﻿using PlantTycoonHelper.Model;
+﻿using PlantTycoon.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace PlantTycoonHelper
 {
@@ -13,16 +12,16 @@ namespace PlantTycoonHelper
 
         }
 
-        public List<FlowerTuple> CalculateFlowers()
+        public List<FlowerFormula> CalculateFlowers()
         {
-            var flowerTuples = new List<FlowerTuple>();
+            var FlowerFormulas = new List<FlowerFormula>();
             foreach (var flowerTypeA in Enum.GetNames(typeof(FlowerType)).OrderBy(x => x))
                 foreach (var flowerTypeB in Enum.GetNames(typeof(FlowerType)).OrderBy(x => x).Where(x => x.CompareTo(flowerTypeA) > 0))
                 {
-                    flowerTuples.Add(new FlowerTuple((FlowerType)Enum.Parse(typeof(FlowerType), flowerTypeA), 
+                    FlowerFormulas.Add(new FlowerFormula((FlowerType)Enum.Parse(typeof(FlowerType), flowerTypeA), 
                         (FlowerType)Enum.Parse(typeof(FlowerType), flowerTypeB)));
                 }
-            return flowerTuples;
+            return FlowerFormulas;
         }
 
         public void CalculatePlants()

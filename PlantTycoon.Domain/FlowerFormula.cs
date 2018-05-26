@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace PlantTycoonHelper.Model
+﻿namespace PlantTycoon.Domain
 {
-    public class FlowerTuple
+    public class FlowerFormula
     {
         public FlowerType FlowerA { get; set; }
         public FlowerType FlowerB { get; set; }
         public FlowerType? Result { get; set; }
 
-        public FlowerTuple(FlowerType flowerA, FlowerType flowerB, FlowerType? result = null)
+        public FlowerFormula(FlowerType flowerA, FlowerType flowerB, FlowerType? result = null)
         {
             this.FlowerA = flowerA;
             this.FlowerB = flowerB;
