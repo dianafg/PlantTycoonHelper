@@ -12,7 +12,7 @@ namespace PlantTycoon.Domain
         Fern,
         Gladiatus,
         Grass,
-        Lemongrass,
+        Lemonbush,
         Maple,
         Maranta,
         Orchid,

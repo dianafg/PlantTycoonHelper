@@ -21,6 +21,7 @@ namespace PlantTycoonHelper
 
             flowerCalculator.SetFlowerFormula(FlowerType.Bluestar, FlowerType.Citrus, FlowerType.Fragrant);
             flowerCalculator.SetFlowerFormula(FlowerType.Bluestar, FlowerType.Daisy, FlowerType.Nox);
+            flowerCalculator.SetFlowerFormula(FlowerType.Bluestar, FlowerType.Fourpetal, FlowerType.Jalapa);
             flowerCalculator.SetFlowerFormula(FlowerType.Bluestar, FlowerType.Jalapa, FlowerType.Rosaceae);
             flowerCalculator.SetFlowerFormula(FlowerType.Bluestar, FlowerType.Rosaceae, FlowerType.Mystic);
             flowerCalculator.SetFlowerFormula(FlowerType.Bluestar, FlowerType.Spotted, FlowerType.Daisy);
@@ -36,13 +37,18 @@ namespace PlantTycoonHelper
             flowerCalculator.SetFlowerFormula(FlowerType.Daisy, FlowerType.Spotted, FlowerType.Painted);
 
             flowerCalculator.SetFlowerFormula(FlowerType.Fabled, FlowerType.Fragrant, FlowerType.Fragrant);
+            flowerCalculator.SetFlowerFormula(FlowerType.Fabled, FlowerType.Rosaceae, FlowerType.Jalapa);
 
             flowerCalculator.SetFlowerFormula(FlowerType.Jalapa, FlowerType.Mystic, FlowerType.Viola);
+            flowerCalculator.SetFlowerFormula(FlowerType.Jalapa, FlowerType.Nox, FlowerType.Rosaceae);
             flowerCalculator.SetFlowerFormula(FlowerType.Jalapa, FlowerType.Spotted, FlowerType.Bluestar);
+
+            flowerCalculator.SetFlowerFormula(FlowerType.Nox, FlowerType.Rosaceae, FlowerType.Mystic);
 
             flowerCalculator.SetFlowerFormula(FlowerType.Spotted, FlowerType.Fragrant, FlowerType.Mystic);
             flowerCalculator.SetFlowerFormula(FlowerType.Spotted, FlowerType.Mystic, FlowerType.Nox);
             flowerCalculator.SetFlowerFormula(FlowerType.Spotted, FlowerType.Rosaceae, FlowerType.Nox);
+            flowerCalculator.SetFlowerFormula(FlowerType.Spotted, FlowerType.Viola, FlowerType.Bluestar);
 
             flowerCalculator.SetFlowerFormula(FlowerType.Rosaceae, FlowerType.Aureus, FlowerType.Fragrant);
             flowerCalculator.SetFlowerFormula(FlowerType.Rosaceae, FlowerType.Fragrant, FlowerType.Jalapa);
@@ -54,17 +60,25 @@ namespace PlantTycoonHelper
             plantCalculator.InitializeEmptyPlantResults();
 
             plantCalculator.SetPlantFormula(PlantType.Ananas, PlantType.Astera, PlantType.Fern);
+            plantCalculator.SetPlantFormula(PlantType.Ananas, PlantType.Maranta, PlantType.Maranta);
 
-            plantCalculator.SetPlantFormula(PlantType.Astera, PlantType.BallCactus, PlantType.Lemongrass);
+            plantCalculator.SetPlantFormula(PlantType.Astera, PlantType.BallCactus, PlantType.Lemonbush);
+            plantCalculator.SetPlantFormula(PlantType.Astera, PlantType.Fanleaf, PlantType.Ananas);
             plantCalculator.SetPlantFormula(PlantType.Astera, PlantType.Fern, PlantType.Gladiatus);
+            plantCalculator.SetPlantFormula(PlantType.Astera, PlantType.Grass, PlantType.Orchid);
             plantCalculator.SetPlantFormula(PlantType.Astera, PlantType.Maple, PlantType.Maranta);
             plantCalculator.SetPlantFormula(PlantType.Astera, PlantType.Maranta, PlantType.Fern);
             plantCalculator.SetPlantFormula(PlantType.Astera, PlantType.Reptans, PlantType.Grass);
 
             plantCalculator.SetPlantFormula(PlantType.BallCactus, PlantType.Fern, PlantType.Bamboo);
+            plantCalculator.SetPlantFormula(PlantType.BallCactus, PlantType.Gladiatus, PlantType.Bamboo);
             plantCalculator.SetPlantFormula(PlantType.BallCactus, PlantType.Maranta, PlantType.Maple);
+            plantCalculator.SetPlantFormula(PlantType.BallCactus, PlantType.Orchid, PlantType.Lemonbush);
+
+            plantCalculator.SetPlantFormula(PlantType.Bamboo, PlantType.Maranta, PlantType.Lemonbush);
 
             plantCalculator.SetPlantFormula(PlantType.Fanleaf, PlantType.Gladiatus, PlantType.Ananas);
+            plantCalculator.SetPlantFormula(PlantType.Fanleaf, PlantType.Orchid, PlantType.Fern);
 
             plantCalculator.SetPlantFormula(PlantType.Fern, PlantType.Gladiatus, PlantType.Fern);
             plantCalculator.SetPlantFormula(PlantType.Fern, PlantType.Maple, PlantType.Fanleaf);
@@ -72,11 +86,11 @@ namespace PlantTycoonHelper
             plantCalculator.SetPlantFormula(PlantType.Fern, PlantType.Orchid, PlantType.Gladiatus);
             plantCalculator.SetPlantFormula(PlantType.Fern, PlantType.Reptans, PlantType.Orchid);
 
-            plantCalculator.SetPlantFormula(PlantType.Grass, PlantType.Lemongrass, PlantType.Fern);
+            plantCalculator.SetPlantFormula(PlantType.Grass, PlantType.Lemonbush, PlantType.Fern);
 
-            plantCalculator.SetPlantFormula(PlantType.Lemongrass, PlantType.Maple, PlantType.Bamboo);
-            plantCalculator.SetPlantFormula(PlantType.Lemongrass, PlantType.Maranta, PlantType.Fanleaf);
-            plantCalculator.SetPlantFormula(PlantType.Lemongrass, PlantType.Reptans, PlantType.Gladiatus);
+            plantCalculator.SetPlantFormula(PlantType.Lemonbush, PlantType.Maple, PlantType.Bamboo);
+            plantCalculator.SetPlantFormula(PlantType.Lemonbush, PlantType.Maranta, PlantType.Fanleaf);
+            plantCalculator.SetPlantFormula(PlantType.Lemonbush, PlantType.Reptans, PlantType.Gladiatus);
 
             plantCalculator.SetPlantFormula(PlantType.Maple, PlantType.Reptans, PlantType.Fern);
         }

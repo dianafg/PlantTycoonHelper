@@ -77,5 +77,18 @@ namespace PlantTycoonHelper
                 return plantFormulas.ToList();
             }
         }
+
+        public List<PlantFormula> ReportAllOrderedByResult()
+        {
+            using (var dbContext = new PlantTycoonContext())
+            {
+                var plantFormulas = dbContext.PlantFormulas
+                    .Where(x => x.Result != null)
+                    .OrderBy(x => x.Result.ToString())
+                    .ThenBy(x => x.PlantA.ToString())
+                    .ThenBy(x => x.PlantB.ToString());
+                return plantFormulas.ToList();
+            }
+        }
     }
 }

@@ -69,6 +69,18 @@ namespace PlantTycoonHelper
                                     .ForEach(x => Console.WriteLine($"{x.PlantA.ToString()} + {x.PlantB.ToString()}"));
                                 break;
 
+                            case "RF":  //Reverse list flowers
+                                var resultFlowerFormulas = flowerCalculator.ReportAllOrderedByResult();
+                                resultFlowerFormulas
+                                    .ForEach(x => Console.WriteLine($"{x.Result.ToString()} <- {x.FlowerA.ToString()} + {x.FlowerB.ToString()}"));
+                                break;
+
+                            case "RP":  //Reverse list plants
+                                var resultPlantFormulas = plantCalculator.ReportAllOrderedByResult();
+                                resultPlantFormulas 
+                                    .ForEach(x => Console.WriteLine($"{x.Result.ToString()} <- {x.PlantA.ToString()} + {x.PlantB.ToString()}"));
+                                break;
+
                             case "UPDATE":  //Update formulas
                                 ReseedFormulas();
                                 break;
