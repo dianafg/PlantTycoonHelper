@@ -15,6 +15,7 @@ namespace PlantTycoon.Domain
         Jalapa,
         Mystic,
         Nox,
+        Painted,
         Rosaceae,
         Spotted,
         Viola

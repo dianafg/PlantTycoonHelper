@@ -1,7 +1,10 @@
 ﻿using PlantTycoon.Domain;
 using System;
-using System.Collections.Generic;
 using System.Linq;
+
+//To publish as exe instead of dll:
+//dotnet.exe publish -c Debug -r win-x64 -f netcoreapp2.0
+//dotnet.exe publish -c Release -r win-x64 -f netcoreapp2.0
 
 namespace PlantTycoonHelper
 {
@@ -39,18 +42,35 @@ namespace PlantTycoonHelper
                         switch (command)
                         {
                             case "LF":  //List flowers
-                                var flowerFormulasWithEmptyResult = new List<FlowerFormula>();
-                                var flowerTypes = Enum.GetValues(typeof(FlowerType));
-                                foreach (var flowerType in flowerTypes)
-                                {
-                                    var flowerFormulasByFlowerType = flowerCalculator.ReportForFlowerType((FlowerType)flowerType);
-                                    flowerFormulasWithEmptyResult.AddRange(flowerFormulasByFlowerType.Where(x => x.Result == null));
-                                }
-                                flowerFormulasWithEmptyResult
+                                var allFlowerFormulas = flowerCalculator.ReportAllOrdered();
+                                var allFlowerFormulasWithResult = allFlowerFormulas.Where(x => x.Result != null).ToList();
+                                var allFlowerFormulasWithEmptyResult = allFlowerFormulas.Where(x => x.Result == null).ToList();
+                                allFlowerFormulas
                                     .ForEach(x => Console.WriteLine($"{x.FlowerA.ToString()} + {x.FlowerB.ToString()} = {x.Result?.ToString()}"));
+                                Console.WriteLine("\nWith result: -------");
+                                allFlowerFormulasWithResult
+                                    .ForEach(x => Console.WriteLine($"{x.FlowerA.ToString()} + {x.FlowerB.ToString()} = {x.Result?.ToString()}"));
+                                Console.WriteLine("\nWith no result: -------");
+                                allFlowerFormulasWithEmptyResult
+                                    .ForEach(x => Console.WriteLine($"{x.FlowerA.ToString()} + {x.FlowerB.ToString()}"));
                                 break;
 
                             case "LP":  //List plants
+                                var allPlantFormulas = plantCalculator.ReportAllOrdered();
+                                var allPlantFormulasWithResult = allPlantFormulas.Where(x => x.Result != null).ToList();
+                                var allPlantFormulasWithEmptyResult = allPlantFormulas.Where(x => x.Result == null).ToList();
+                                allPlantFormulas
+                                    .ForEach(x => Console.WriteLine($"{x.PlantA.ToString()} + {x.PlantB.ToString()} = {x.Result?.ToString()}"));
+                                Console.WriteLine("\nWith result: -------");
+                                allPlantFormulasWithResult
+                                    .ForEach(x => Console.WriteLine($"{x.PlantA.ToString()} + {x.PlantB.ToString()} = {x.Result?.ToString()}"));
+                                Console.WriteLine("\nWith no result: -------");
+                                allPlantFormulasWithEmptyResult
+                                    .ForEach(x => Console.WriteLine($"{x.PlantA.ToString()} + {x.PlantB.ToString()}"));
+                                break;
+
+                            case "UPDATE":  //Update formulas
+                                ReseedFormulas();
                                 break;
 
                             default:
@@ -78,7 +98,7 @@ namespace PlantTycoonHelper
 
         private static object ParseFlowerOrPlantInput(string input)
         {
-            object parsedInput = input.ToFlowerType() as object ?? input.ToPlantType() as object ?? input;
+            object parsedInput = input.ToFlowerType() as object ?? input.ToPlantType() as object ?? input.ToUpper();
             return parsedInput;
         }
 
