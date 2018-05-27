@@ -91,5 +91,22 @@ namespace PlantTycoonHelper
                 return flowerFormulas.ToList();
             }
         }
+
+        public List<FlowerType?> ReportFlowerTypesWithNoFormula()
+        {
+            using (var dbContext = new PlantTycoonContext())
+            {
+                var flowerTypes = Enum.GetValues(typeof(FlowerType)).Cast<FlowerType?>();
+                var flowerTypesWithFormula = dbContext.FlowerFormulas
+                    .Where(x => x.Result != null)
+                    .Select(x => x.Result)
+                    .Distinct();
+
+                var flowerTypesWithNoFormula = flowerTypes
+                    .Except(flowerTypesWithFormula);
+
+                return flowerTypesWithNoFormula.ToList();
+            }
+        }
     }
 }

@@ -73,12 +73,20 @@ namespace PlantTycoonHelper
                                 var resultFlowerFormulas = flowerCalculator.ReportAllOrderedByResult();
                                 resultFlowerFormulas
                                     .ForEach(x => Console.WriteLine($"{x.Result.ToString()} <- {x.FlowerA.ToString()} + {x.FlowerB.ToString()}"));
+                                Console.WriteLine("\nElements with no formula:");
+                                var flowerTypesWithNoFormula = flowerCalculator.ReportFlowerTypesWithNoFormula();
+                                flowerTypesWithNoFormula
+                                    .ForEach(x => Console.WriteLine($"{x.ToString()}"));
                                 break;
 
                             case "RP":  //Reverse list plants
                                 var resultPlantFormulas = plantCalculator.ReportAllOrderedByResult();
                                 resultPlantFormulas 
                                     .ForEach(x => Console.WriteLine($"{x.Result.ToString()} <- {x.PlantA.ToString()} + {x.PlantB.ToString()}"));
+                                Console.WriteLine("\nElements with no formula:");
+                                var plantTypesWithNoFormula = plantCalculator.ReportPlantTypesWithNoFormula();
+                                plantTypesWithNoFormula
+                                    .ForEach(x => Console.WriteLine($"{x.ToString()}"));
                                 break;
 
                             case "UPDATE":  //Update formulas
