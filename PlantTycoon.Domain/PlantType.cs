@@ -16,6 +16,7 @@ namespace PlantTycoon.Domain
         Maple,
         Maranta,
         Orchid,
+        PipeCactus,
         RareOak,
         Reptans
     }
