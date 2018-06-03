@@ -18,7 +18,8 @@ namespace PlantTycoon.Domain
         Orchid,
         PipeCactus,
         RareOak,
-        Reptans
+        Reptans,
+        Scandens
     }
 
     public static class PlantTypeExtensions
