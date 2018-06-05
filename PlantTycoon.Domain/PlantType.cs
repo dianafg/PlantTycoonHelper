@@ -19,7 +19,8 @@ namespace PlantTycoon.Domain
         PipeCactus,
         RareOak,
         Reptans,
-        Scandens
+        Scandens,
+        TigerFern
     }
 
     public static class PlantTypeExtensions
