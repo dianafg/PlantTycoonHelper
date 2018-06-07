@@ -12,13 +12,15 @@ namespace PlantTycoonHelper
     {
         private static FlowerCalculator flowerCalculator;
         private static PlantCalculator plantCalculator;
-        private static FormulaSeeder formulaSeeder;
+        private static FlowerFormulaSeeder flowerSeeder;
+        private static PlantFormulaSeeder plantSeeder;
 
         static void Main(string[] args)
         {
             flowerCalculator = new FlowerCalculator();
             plantCalculator = new PlantCalculator();
-            formulaSeeder = new FormulaSeeder(flowerCalculator, plantCalculator);
+            flowerSeeder = new FlowerFormulaSeeder(flowerCalculator);
+            plantSeeder = new PlantFormulaSeeder(plantCalculator);
 
             //CalculateFlowers();
             //CalculatePlants();
@@ -124,8 +126,8 @@ namespace PlantTycoonHelper
 
         static void ReseedFormulas()
         {
-            formulaSeeder.ReseedFlowers();
-            formulaSeeder.ReseedPlants();
+            flowerSeeder.Reseed();
+            plantSeeder.Reseed();
         }
 
         static void ListFlowerCombinations()

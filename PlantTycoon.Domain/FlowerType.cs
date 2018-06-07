@@ -18,6 +18,8 @@ namespace PlantTycoon.Domain
         Painted,
         Rosaceae,
         Spotted,
+        Tilia,
+        Venus,
         Viola
     }
 
