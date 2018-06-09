@@ -4,6 +4,7 @@ namespace PlantTycoon.Domain
 {
     public enum FlowerType
     {
+        Arthurium,
         Aureus,
         Blazing,
         Bluestar,
@@ -20,6 +21,7 @@ namespace PlantTycoon.Domain
         Rosaceae,
         Spotted,
         Tilia,
+        Venomous,
         Venus,
         Viola
     }
