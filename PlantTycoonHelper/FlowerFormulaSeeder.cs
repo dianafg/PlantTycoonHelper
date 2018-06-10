@@ -71,7 +71,7 @@ namespace PlantTycoonHelper
             flowerCalculator.SetFlowerFormula(FlowerType.Citrus, FlowerType.Spotted, FlowerType.Jalapa);
             flowerCalculator.SetFlowerFormula(FlowerType.Citrus, FlowerType.Viola, FlowerType.Fourpetal);
 
-            flowerCalculator.SetFlowerFormula(FlowerType.Daisy, FlowerType.Fabled, true);
+            flowerCalculator.SetFlowerFormula(FlowerType.Daisy, FlowerType.Fabled, FlowerType.Rosaceae);
             flowerCalculator.SetFlowerFormula(FlowerType.Daisy, FlowerType.Fourpetal, FlowerType.Viola);
             flowerCalculator.SetFlowerFormula(FlowerType.Daisy, FlowerType.Fragrant, FlowerType.Rosaceae);
             flowerCalculator.SetFlowerFormula(FlowerType.Daisy, FlowerType.Jalapa, FlowerType.Mystic);
@@ -135,6 +135,7 @@ namespace PlantTycoonHelper
             flowerCalculator.SetFlowerFormula(FlowerType.Painted, FlowerType.Viola, FlowerType.Bluestar);
 
             flowerCalculator.SetFlowerFormula(FlowerType.Rosaceae, FlowerType.Spotted, FlowerType.Nox);
+            flowerCalculator.SetFlowerFormula(FlowerType.Rosaceae, FlowerType.Venomous, true);
             flowerCalculator.SetFlowerFormula(FlowerType.Rosaceae, FlowerType.Viola, FlowerType.Viola);
 
             flowerCalculator.SetFlowerFormula(FlowerType.Spotted, FlowerType.Viola, FlowerType.Bluestar);
