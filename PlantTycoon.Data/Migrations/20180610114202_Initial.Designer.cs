@@ -11,7 +11,7 @@ using System;
 namespace PlantTycoon.Data.Migrations
 {
     [DbContext(typeof(PlantTycoonContext))]
-    [Migration("20180526130954_Initial")]
+    [Migration("20180610114202_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -30,6 +30,8 @@ namespace PlantTycoon.Data.Migrations
 
                     b.Property<int>("FlowerB");
 
+                    b.Property<bool>("InProgress");
+
                     b.Property<int?>("Result");
 
                     b.HasKey("Id");
@@ -41,6 +43,8 @@ namespace PlantTycoon.Data.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<bool>("InProgress");
 
                     b.Property<int>("PlantA");
 

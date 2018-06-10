@@ -8,6 +8,7 @@ namespace PlantTycoon.Domain
         public FlowerType FlowerA { get; protected set; }
         public FlowerType FlowerB { get; protected set; }
         public FlowerType? Result { get; set; }
+        public bool InProgress { get; set; }
 
         protected FlowerFormula() { }   //For EF
 
@@ -31,6 +32,19 @@ namespace PlantTycoon.Domain
             var flowerFormula = CreateFromFlowerTypeNames(flowerTypeNameA, flowerTypeNameB);
             flowerFormula.Result = flowerTypeResult;
             return flowerFormula;
+        }
+
+        public void SetResultAndInProgress(FlowerType? result, bool inProgress)
+        {
+            //Some consistency checkings for parameter combinations
+            if (result == null && inProgress == false)
+                throw new InvalidOperationException($"Result can only be null for formulas in progress.");
+
+            if (result != null && inProgress == true)
+                throw new InvalidOperationException($"Result must be null for formulas in progress.");
+
+            this.Result = result;
+            this.InProgress = inProgress;
         }
     }
 }

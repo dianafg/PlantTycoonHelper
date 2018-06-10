@@ -29,6 +29,8 @@ namespace PlantTycoon.Data.Migrations
 
                     b.Property<int>("FlowerB");
 
+                    b.Property<bool>("InProgress");
+
                     b.Property<int?>("Result");
 
                     b.HasKey("Id");
@@ -40,6 +42,8 @@ namespace PlantTycoon.Data.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<bool>("InProgress");
 
                     b.Property<int>("PlantA");
 

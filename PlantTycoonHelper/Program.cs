@@ -1,4 +1,5 @@
-﻿using PlantTycoon.Domain;
+﻿using PlantTycoon.Data;
+using PlantTycoon.Domain;
 using System;
 using System.Linq;
 
@@ -34,7 +35,7 @@ namespace PlantTycoonHelper
         {
             while (true)
             {
-                Console.WriteLine("\nEnter flower or plant type:");
+                Console.WriteLine("\nEnter command:");
                 var input = Console.ReadLine();
                 Console.WriteLine("---------------");
                 var parsedInput = ParseFlowerOrPlantInput(input);
@@ -43,15 +44,28 @@ namespace PlantTycoonHelper
                     case string command:
                         switch (command)
                         {
+                            case "AF":  //All flower combinations
+                                var allFlowerFormulasAF = flowerCalculator.ReportAllOrdered();
+                                allFlowerFormulasAF
+                                    .ForEach(x => Console.WriteLine(
+                                        $"{x.FlowerA.ToString()} + {x.FlowerB.ToString()} = {x.Result?.ToString()}{ComposeInProgressString(x.InProgress)}"));
+                                break;
+
+                            case "AP":  //All plant combinations
+                                var allPlantFormulasAF = plantCalculator.ReportAllOrdered();
+                                allPlantFormulasAF
+                                    .ForEach(x => Console.WriteLine(
+                                        $"{x.PlantA.ToString()} + {x.PlantB.ToString()} = {x.Result?.ToString()}{ComposeInProgressString(x.InProgress)}"));
+                                break;
+
                             case "LF":  //List flowers
                                 var allFlowerFormulas = flowerCalculator.ReportAllOrdered();
-                                var allFlowerFormulasWithResult = allFlowerFormulas.Where(x => x.Result != null).ToList();
-                                var allFlowerFormulasWithEmptyResult = allFlowerFormulas.Where(x => x.Result == null).ToList();
-                                allFlowerFormulas
-                                    .ForEach(x => Console.WriteLine($"{x.FlowerA.ToString()} + {x.FlowerB.ToString()} = {x.Result?.ToString()}"));
+                                var allFlowerFormulasWithResult = allFlowerFormulas.Where(x => x.Result != null || x.InProgress).ToList();
+                                var allFlowerFormulasWithEmptyResult = allFlowerFormulas.Where(x => x.Result == null && x.InProgress == false).ToList();
                                 Console.WriteLine("\nWith result: -------");
                                 allFlowerFormulasWithResult
-                                    .ForEach(x => Console.WriteLine($"{x.FlowerA.ToString()} + {x.FlowerB.ToString()} = {x.Result?.ToString()}"));
+                                    .ForEach(x => Console.WriteLine(
+                                        $"{x.FlowerA.ToString()} + {x.FlowerB.ToString()} = {x.Result?.ToString()}{ComposeInProgressString(x.InProgress)}"));
                                 Console.WriteLine("\nWith no result: -------");
                                 allFlowerFormulasWithEmptyResult
                                     .ForEach(x => Console.WriteLine($"{x.FlowerA.ToString()} + {x.FlowerB.ToString()}"));
@@ -61,11 +75,10 @@ namespace PlantTycoonHelper
                                 var allPlantFormulas = plantCalculator.ReportAllOrdered();
                                 var allPlantFormulasWithResult = allPlantFormulas.Where(x => x.Result != null).ToList();
                                 var allPlantFormulasWithEmptyResult = allPlantFormulas.Where(x => x.Result == null).ToList();
-                                allPlantFormulas
-                                    .ForEach(x => Console.WriteLine($"{x.PlantA.ToString()} + {x.PlantB.ToString()} = {x.Result?.ToString()}"));
                                 Console.WriteLine("\nWith result: -------");
                                 allPlantFormulasWithResult
-                                    .ForEach(x => Console.WriteLine($"{x.PlantA.ToString()} + {x.PlantB.ToString()} = {x.Result?.ToString()}"));
+                                    .ForEach(x => Console.WriteLine(
+                                        $"{x.PlantA.ToString()} + {x.PlantB.ToString()} = {x.Result?.ToString()}{ComposeInProgressString(x.InProgress)}"));
                                 Console.WriteLine("\nWith no result: -------");
                                 allPlantFormulasWithEmptyResult
                                     .ForEach(x => Console.WriteLine($"{x.PlantA.ToString()} + {x.PlantB.ToString()}"));
@@ -118,6 +131,11 @@ namespace PlantTycoonHelper
             }
         }
 
+        private static string ComposeInProgressString(bool inProgress)
+        {
+            return (inProgress) ? "(P)" : string.Empty;
+        }
+
         private static object ParseFlowerOrPlantInput(string input)
         {
             object parsedInput = input.ToFlowerType() as object ?? input.ToPlantType() as object ?? input.ToUpper();
@@ -126,6 +144,12 @@ namespace PlantTycoonHelper
 
         static void ReseedFormulas()
         {
+            //TODO: it's time to rethink dbContext scopes. Use UnitOfWork.
+            using (var dbContext = new PlantTycoonContext())
+            {
+                PlantTycoonDbInitializer.Initialize(dbContext);
+            }
+
             flowerSeeder.Reseed();
             plantSeeder.Reseed();
         }

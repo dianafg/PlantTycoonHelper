@@ -21,6 +21,16 @@ namespace PlantTycoonHelper
 
         public void SetFlowerFormula(FlowerType flowerA, FlowerType flowerB, FlowerType result)
         {
+            this.SetFlowerFormula(flowerA, flowerB, result, false);
+        }
+
+        public void SetFlowerFormula(FlowerType flowerA, FlowerType flowerB, bool inProgress)
+        {
+            this.SetFlowerFormula(flowerA, flowerB, null, inProgress);
+        }
+
+        private void SetFlowerFormula(FlowerType flowerA, FlowerType flowerB, FlowerType? result, bool inProgress)
+        {
             using (var dbContext = new PlantTycoonContext())
             {
                 var flowerFormulas = dbContext.FlowerFormulas.Where(x => x.FlowerA == flowerA && x.FlowerB == flowerB
@@ -29,7 +39,7 @@ namespace PlantTycoonHelper
                 if (flowerFormulas.Count() != 1)
                     throw new InvalidOperationException($"There should be one and only one formula for those two flowers, but we found {flowerFormulas.Count()}");
 
-                flowerFormulas.First().Result = result;
+                flowerFormulas.First().SetResultAndInProgress(result, inProgress);
                 dbContext.SaveChanges();
             }
         }

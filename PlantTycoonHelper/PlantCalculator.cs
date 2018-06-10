@@ -21,6 +21,16 @@ namespace PlantTycoonHelper
 
         public void SetPlantFormula(PlantType plantA, PlantType plantB, PlantType result)
         {
+            this.SetPlantFormula(plantA, plantB, result, false);
+        }
+
+        public void SetPlantFormula(PlantType plantA, PlantType plantB, bool inProgress)
+        {
+            this.SetPlantFormula(plantA, plantB, null, inProgress);
+        }
+
+        private void SetPlantFormula(PlantType plantA, PlantType plantB, PlantType? result, bool inProgress)
+        {
             using (var dbContext = new PlantTycoonContext())
             {
                 var plantFormulas = dbContext.PlantFormulas.Where(x => x.PlantA == plantA && x.PlantB == plantB
@@ -29,7 +39,7 @@ namespace PlantTycoonHelper
                 if (plantFormulas.Count() != 1)
                     throw new InvalidOperationException($"There should be one and only one formula for those two plants, but we found {plantFormulas.Count()}");
 
-                plantFormulas.First().Result = result;
+                plantFormulas.First().SetResultAndInProgress(result, inProgress);
                 dbContext.SaveChanges();
             }
         }

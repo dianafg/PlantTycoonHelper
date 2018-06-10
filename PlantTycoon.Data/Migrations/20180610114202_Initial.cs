@@ -17,6 +17,7 @@ namespace PlantTycoon.Data.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     FlowerA = table.Column<int>(nullable: false),
                     FlowerB = table.Column<int>(nullable: false),
+                    InProgress = table.Column<bool>(nullable: false),
                     Result = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
@@ -30,6 +31,7 @@ namespace PlantTycoon.Data.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    InProgress = table.Column<bool>(nullable: false),
                     PlantA = table.Column<int>(nullable: false),
                     PlantB = table.Column<int>(nullable: false),
                     Result = table.Column<int>(nullable: true)

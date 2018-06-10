@@ -4,7 +4,7 @@ namespace PlantTycoon.Domain
 {
     public enum FlowerType
     {
-        Arthurium,
+        Arthurium = 1,
         Aureus,
         Blazing,
         Bluestar,

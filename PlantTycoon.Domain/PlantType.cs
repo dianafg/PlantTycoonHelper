@@ -4,7 +4,7 @@ namespace PlantTycoon.Domain
 {
     public enum  PlantType
     {
-        Ananas,
+        Ananas = 1,
         Astera,
         BallCactus,
         Bamboo,
