@@ -44,6 +44,7 @@ namespace PlantTycoonHelper
             flowerCalculator.SetFlowerFormula(FlowerType.Blazing, FlowerType.Fourpetal, FlowerType.Fourpetal);
             flowerCalculator.SetFlowerFormula(FlowerType.Blazing, FlowerType.Fragrant, FlowerType.Blazing);
             flowerCalculator.SetFlowerFormula(FlowerType.Blazing, FlowerType.Jalapa, FlowerType.Fragrant);
+            flowerCalculator.SetFlowerFormula(FlowerType.Blazing, FlowerType.Mela, true);
             flowerCalculator.SetFlowerFormula(FlowerType.Blazing, FlowerType.Mystic, true);
             flowerCalculator.SetFlowerFormula(FlowerType.Blazing, FlowerType.Painted, FlowerType.Rosaceae);
             flowerCalculator.SetFlowerFormula(FlowerType.Blazing, FlowerType.Rosaceae, FlowerType.Fabled);
@@ -120,6 +121,7 @@ namespace PlantTycoonHelper
             flowerCalculator.SetFlowerFormula(FlowerType.Jalapa, FlowerType.Rosaceae, FlowerType.Viola);
             flowerCalculator.SetFlowerFormula(FlowerType.Jalapa, FlowerType.Spotted, FlowerType.Bluestar);
             flowerCalculator.SetFlowerFormula(FlowerType.Jalapa, FlowerType.Tilia, FlowerType.Mela);
+            flowerCalculator.SetFlowerFormula(FlowerType.Jalapa, FlowerType.Venus, true);
             flowerCalculator.SetFlowerFormula(FlowerType.Jalapa, FlowerType.Viola, FlowerType.Jalapa);
 
             flowerCalculator.SetFlowerFormula(FlowerType.Mela, FlowerType.Venomous, FlowerType.Mela);
