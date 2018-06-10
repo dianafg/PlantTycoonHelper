@@ -20,6 +20,7 @@ namespace PlantTycoon.Domain
         Painted,
         Rosaceae,
         Spotted,
+        Tahitian,
         Tilia,
         Venomous,
         Venus,
