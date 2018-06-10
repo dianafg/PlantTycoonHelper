@@ -15,6 +15,7 @@ namespace PlantTycoonHelper
         {
             flowerCalculator.InitializeEmptyFlowerResults();
 
+            flowerCalculator.SetFlowerFormula(FlowerType.Arthurium, FlowerType.Bluestar, true);
             flowerCalculator.SetFlowerFormula(FlowerType.Arthurium, FlowerType.Fabled, true);
             flowerCalculator.SetFlowerFormula(FlowerType.Arthurium, FlowerType.Venomous, FlowerType.Citrus);
             flowerCalculator.SetFlowerFormula(FlowerType.Arthurium, FlowerType.Viola, true);
@@ -47,7 +48,7 @@ namespace PlantTycoonHelper
             flowerCalculator.SetFlowerFormula(FlowerType.Blazing, FlowerType.Painted, FlowerType.Rosaceae);
             flowerCalculator.SetFlowerFormula(FlowerType.Blazing, FlowerType.Rosaceae, FlowerType.Fabled);
             flowerCalculator.SetFlowerFormula(FlowerType.Blazing, FlowerType.Spotted, FlowerType.Rosaceae);
-            flowerCalculator.SetFlowerFormula(FlowerType.Blazing, FlowerType.Tilia, true);
+            flowerCalculator.SetFlowerFormula(FlowerType.Blazing, FlowerType.Tilia, FlowerType.Arthurium);
             flowerCalculator.SetFlowerFormula(FlowerType.Blazing, FlowerType.Venomous, true);
             flowerCalculator.SetFlowerFormula(FlowerType.Blazing, FlowerType.Venus, FlowerType.Mela);
             flowerCalculator.SetFlowerFormula(FlowerType.Blazing, FlowerType.Viola, FlowerType.Fabled);
@@ -93,7 +94,6 @@ namespace PlantTycoonHelper
             flowerCalculator.SetFlowerFormula(FlowerType.Fabled, FlowerType.Rosaceae, FlowerType.Jalapa);
             flowerCalculator.SetFlowerFormula(FlowerType.Fabled, FlowerType.Spotted, FlowerType.Mystic);
             flowerCalculator.SetFlowerFormula(FlowerType.Fabled, FlowerType.Tilia, FlowerType.Citrus);
-            flowerCalculator.SetFlowerFormula(FlowerType.Fabled, FlowerType.Venomous, true);
             flowerCalculator.SetFlowerFormula(FlowerType.Fabled, FlowerType.Venus, FlowerType.Venomous);
             flowerCalculator.SetFlowerFormula(FlowerType.Fabled, FlowerType.Viola, FlowerType.Jalapa);
 
