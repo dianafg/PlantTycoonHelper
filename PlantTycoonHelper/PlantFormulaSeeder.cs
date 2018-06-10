@@ -50,7 +50,7 @@ namespace PlantTycoonHelper
             plantCalculator.SetPlantFormula(PlantType.BallCactus, PlantType.Fern, PlantType.Bamboo);
             plantCalculator.SetPlantFormula(PlantType.BallCactus, PlantType.Glaber, PlantType.Glaber);
             plantCalculator.SetPlantFormula(PlantType.BallCactus, PlantType.Gladiatus, PlantType.Bamboo);
-            plantCalculator.SetPlantFormula(PlantType.BallCactus, PlantType.Grass, true);
+            plantCalculator.SetPlantFormula(PlantType.BallCactus, PlantType.Grass, PlantType.Fanleaf);
             plantCalculator.SetPlantFormula(PlantType.BallCactus, PlantType.Lemonbush, PlantType.RareOak);
             plantCalculator.SetPlantFormula(PlantType.BallCactus, PlantType.Maple, PlantType.PipeCactus);
             plantCalculator.SetPlantFormula(PlantType.BallCactus, PlantType.Maranta, PlantType.Maple);
@@ -117,6 +117,7 @@ namespace PlantTycoonHelper
             plantCalculator.SetPlantFormula(PlantType.Grass, PlantType.Lemonbush, PlantType.Fern);
             plantCalculator.SetPlantFormula(PlantType.Grass, PlantType.Maple, PlantType.Ananas);
             plantCalculator.SetPlantFormula(PlantType.Grass, PlantType.Maranta, PlantType.Gladiatus);
+            plantCalculator.SetPlantFormula(PlantType.Grass, PlantType.RareOak, PlantType.Maranta);
             plantCalculator.SetPlantFormula(PlantType.Grass, PlantType.Reptans, PlantType.Scandens);
 
             plantCalculator.SetPlantFormula(PlantType.Lemonbush, PlantType.Maple, PlantType.Bamboo);
@@ -147,6 +148,7 @@ namespace PlantTycoonHelper
 
             plantCalculator.SetPlantFormula(PlantType.PearCactus, PlantType.PipeCactus, PlantType.PearCactus);
             plantCalculator.SetPlantFormula(PlantType.PearCactus, PlantType.RareOak, PlantType.PipeCactus);
+            plantCalculator.SetPlantFormula(PlantType.PearCactus, PlantType.Scandens, PlantType.Maranta);
             plantCalculator.SetPlantFormula(PlantType.PearCactus, PlantType.TigerFern, PlantType.Glaber);
 
             plantCalculator.SetPlantFormula(PlantType.PipeCactus, PlantType.RareOak, PlantType.PipeCactus);
