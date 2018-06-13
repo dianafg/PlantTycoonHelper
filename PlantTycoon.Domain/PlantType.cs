@@ -16,6 +16,7 @@ namespace PlantTycoon.Domain
         Lemonbush,
         Maple,
         Maranta,
+        Multiflora,
         Orchid,
         PearCactus,
         PipeCactus,

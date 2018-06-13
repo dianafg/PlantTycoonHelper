@@ -14,6 +14,7 @@ namespace PlantTycoon.Domain
         Fourpetal,
         Fragrant,
         Jalapa,
+        Lilia,
         Mela,
         Mystic,
         Nox,

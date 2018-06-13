@@ -72,7 +72,7 @@ namespace PlantTycoonHelper
             plantCalculator.SetPlantFormula(PlantType.Bamboo, PlantType.Lemonbush, PlantType.Bamboo);
             plantCalculator.SetPlantFormula(PlantType.Bamboo, PlantType.Maple, PlantType.Maple);
             plantCalculator.SetPlantFormula(PlantType.Bamboo, PlantType.Maranta, PlantType.Lemonbush);
-            plantCalculator.SetPlantFormula(PlantType.Bamboo, PlantType.Orchid, true);
+            plantCalculator.SetPlantFormula(PlantType.Bamboo, PlantType.Orchid, PlantType.Ananas);
             plantCalculator.SetPlantFormula(PlantType.Bamboo, PlantType.PearCactus, PlantType.RareOak);
             plantCalculator.SetPlantFormula(PlantType.Bamboo, PlantType.PipeCactus, PlantType.RareOak);
             plantCalculator.SetPlantFormula(PlantType.Bamboo, PlantType.RareOak, PlantType.Maple);
@@ -107,6 +107,7 @@ namespace PlantTycoonHelper
 
             plantCalculator.SetPlantFormula(PlantType.Glaber, PlantType.Lemonbush, PlantType.PipeCactus);
             plantCalculator.SetPlantFormula(PlantType.Glaber, PlantType.Maple, PlantType.PearCactus);
+            plantCalculator.SetPlantFormula(PlantType.Glaber, PlantType.Maranta, PlantType.RareOak);
             plantCalculator.SetPlantFormula(PlantType.Glaber, PlantType.Orchid, PlantType.Lemonbush);
             plantCalculator.SetPlantFormula(PlantType.Glaber, PlantType.PearCactus, PlantType.BallCactus);
             plantCalculator.SetPlantFormula(PlantType.Glaber, PlantType.PipeCactus, PlantType.BallCactus);
@@ -151,9 +152,10 @@ namespace PlantTycoonHelper
             plantCalculator.SetPlantFormula(PlantType.Maple, PlantType.TigerFern, PlantType.PearCactus);
 
             plantCalculator.SetPlantFormula(PlantType.Maranta, PlantType.Orchid, PlantType.Fern);
-            plantCalculator.SetPlantFormula(PlantType.Maranta, PlantType.PearCactus, PlantType.Bamboo);
+            plantCalculator.SetPlantFormula(PlantType.Maranta, PlantType.PearCactus, PlantType.Maple);
             plantCalculator.SetPlantFormula(PlantType.Maranta, PlantType.PipeCactus, PlantType.Bamboo);
             plantCalculator.SetPlantFormula(PlantType.Maranta, PlantType.RareOak, PlantType.Bamboo);
+            plantCalculator.SetPlantFormula(PlantType.Maranta, PlantType.Reptans, PlantType.Bamboo);
             plantCalculator.SetPlantFormula(PlantType.Maranta, PlantType.TigerFern, PlantType.RareOak);
 
             plantCalculator.SetPlantFormula(PlantType.Orchid, PlantType.PearCactus, PlantType.Fanleaf);
