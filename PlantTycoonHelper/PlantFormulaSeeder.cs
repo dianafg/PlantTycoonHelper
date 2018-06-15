@@ -26,6 +26,7 @@ namespace PlantTycoonHelper
             plantCalculator.SetPlantFormula(PlantType.Ananas, PlantType.Maranta, PlantType.Maranta);
             plantCalculator.SetPlantFormula(PlantType.Ananas, PlantType.PearCactus, PlantType.Bamboo);
             plantCalculator.SetPlantFormula(PlantType.Ananas, PlantType.PipeCactus, PlantType.Bamboo);
+            plantCalculator.SetPlantFormula(PlantType.Ananas, PlantType.Pitcher, PlantType.RareOak);
             plantCalculator.SetPlantFormula(PlantType.Ananas, PlantType.Reptans, PlantType.Astera);
             plantCalculator.SetPlantFormula(PlantType.Ananas, PlantType.RareOak, PlantType.Lemonbush);
             plantCalculator.SetPlantFormula(PlantType.Ananas, PlantType.TigerFern, PlantType.RareOak);
@@ -87,6 +88,7 @@ namespace PlantTycoonHelper
             plantCalculator.SetPlantFormula(PlantType.Fanleaf, PlantType.Lemonbush, PlantType.Lemonbush);
             plantCalculator.SetPlantFormula(PlantType.Fanleaf, PlantType.Maple, PlantType.Bamboo);
             plantCalculator.SetPlantFormula(PlantType.Fanleaf, PlantType.Maranta, PlantType.Fanleaf);
+            plantCalculator.SetPlantFormula(PlantType.Fanleaf, PlantType.Multiflora, PlantType.PearCactus);
             plantCalculator.SetPlantFormula(PlantType.Fanleaf, PlantType.Orchid, PlantType.Fern);
             plantCalculator.SetPlantFormula(PlantType.Fanleaf, PlantType.PearCactus, PlantType.Maple);
             plantCalculator.SetPlantFormula(PlantType.Fanleaf, PlantType.PipeCactus, PlantType.Maple);
@@ -104,10 +106,12 @@ namespace PlantTycoonHelper
             plantCalculator.SetPlantFormula(PlantType.Fern, PlantType.PearCactus, PlantType.Bamboo);
             plantCalculator.SetPlantFormula(PlantType.Fern, PlantType.PipeCactus, PlantType.Lemonbush);
             plantCalculator.SetPlantFormula(PlantType.Fern, PlantType.Reptans, PlantType.Orchid);
+            plantCalculator.SetPlantFormula(PlantType.Fern, PlantType.TigerFern, PlantType.Maple);
 
             plantCalculator.SetPlantFormula(PlantType.Glaber, PlantType.Lemonbush, PlantType.PipeCactus);
             plantCalculator.SetPlantFormula(PlantType.Glaber, PlantType.Maple, PlantType.PearCactus);
             plantCalculator.SetPlantFormula(PlantType.Glaber, PlantType.Maranta, PlantType.RareOak);
+            plantCalculator.SetPlantFormula(PlantType.Glaber, PlantType.Multiflora, PlantType.Pitcher);
             plantCalculator.SetPlantFormula(PlantType.Glaber, PlantType.Orchid, PlantType.Lemonbush);
             plantCalculator.SetPlantFormula(PlantType.Glaber, PlantType.PearCactus, PlantType.BallCactus);
             plantCalculator.SetPlantFormula(PlantType.Glaber, PlantType.PipeCactus, PlantType.BallCactus);
@@ -164,6 +168,7 @@ namespace PlantTycoonHelper
             plantCalculator.SetPlantFormula(PlantType.Orchid, PlantType.TigerFern, PlantType.Bamboo);
 
             plantCalculator.SetPlantFormula(PlantType.PearCactus, PlantType.PipeCactus, PlantType.PearCactus);
+            plantCalculator.SetPlantFormula(PlantType.PearCactus, PlantType.Pitcher, PlantType.Glaber);
             plantCalculator.SetPlantFormula(PlantType.PearCactus, PlantType.RareOak, PlantType.PipeCactus);
             plantCalculator.SetPlantFormula(PlantType.PearCactus, PlantType.Scandens, PlantType.Maranta);
             plantCalculator.SetPlantFormula(PlantType.PearCactus, PlantType.TigerFern, PlantType.Glaber);
@@ -172,6 +177,8 @@ namespace PlantTycoonHelper
             plantCalculator.SetPlantFormula(PlantType.PipeCactus, PlantType.Reptans, PlantType.Ananas);
             plantCalculator.SetPlantFormula(PlantType.PipeCactus, PlantType.Scandens, PlantType.Maranta);
             plantCalculator.SetPlantFormula(PlantType.PipeCactus, PlantType.TigerFern, PlantType.BallCactus);
+
+            plantCalculator.SetPlantFormula(PlantType.Pitcher, PlantType.RareOak, PlantType.BallCactus);
 
             plantCalculator.SetPlantFormula(PlantType.RareOak, PlantType.Reptans, PlantType.Ananas);
             plantCalculator.SetPlantFormula(PlantType.RareOak, PlantType.TigerFern, PlantType.BallCactus);

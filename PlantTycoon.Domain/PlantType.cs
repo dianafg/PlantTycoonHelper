@@ -20,6 +20,7 @@ namespace PlantTycoon.Domain
         Orchid,
         PearCactus,
         PipeCactus,
+        Pitcher,
         RareOak,
         Reptans,
         Scandens,
