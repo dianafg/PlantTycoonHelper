@@ -20,6 +20,7 @@ namespace PlantTycoonHelper
             flowerCalculator.SetFlowerFormula(FlowerType.Arthurium, FlowerType.Fabled, FlowerType.Aureus);
             flowerCalculator.SetFlowerFormula(FlowerType.Arthurium, FlowerType.Jalapa, FlowerType.Aureus);
             flowerCalculator.SetFlowerFormula(FlowerType.Arthurium, FlowerType.Mela, FlowerType.Citrus);
+            flowerCalculator.SetFlowerFormula(FlowerType.Arthurium, FlowerType.Lilia, true);
             flowerCalculator.SetFlowerFormula(FlowerType.Arthurium, FlowerType.Rosaceae, FlowerType.Fourpetal);
             flowerCalculator.SetFlowerFormula(FlowerType.Arthurium, FlowerType.Tahitian, FlowerType.Venus);
             flowerCalculator.SetFlowerFormula(FlowerType.Arthurium, FlowerType.Venomous, FlowerType.Citrus);
@@ -33,7 +34,7 @@ namespace PlantTycoonHelper
             flowerCalculator.SetFlowerFormula(FlowerType.Aureus, FlowerType.Fourpetal, FlowerType.Aureus);
             flowerCalculator.SetFlowerFormula(FlowerType.Aureus, FlowerType.Fragrant, FlowerType.Fourpetal);
             flowerCalculator.SetFlowerFormula(FlowerType.Aureus, FlowerType.Jalapa, FlowerType.Blazing);
-            flowerCalculator.SetFlowerFormula(FlowerType.Aureus, FlowerType.Lilia, true);
+            flowerCalculator.SetFlowerFormula(FlowerType.Aureus, FlowerType.Lilia, FlowerType.Arthurium);
             flowerCalculator.SetFlowerFormula(FlowerType.Aureus, FlowerType.Mela, FlowerType.Venomous);
             flowerCalculator.SetFlowerFormula(FlowerType.Aureus, FlowerType.Mystic, FlowerType.Fabled);
             flowerCalculator.SetFlowerFormula(FlowerType.Aureus, FlowerType.Nox, FlowerType.Jalapa);
@@ -43,6 +44,9 @@ namespace PlantTycoonHelper
             flowerCalculator.SetFlowerFormula(FlowerType.Aureus, FlowerType.Venomous, FlowerType.Venomous);
             flowerCalculator.SetFlowerFormula(FlowerType.Aureus, FlowerType.Venus, FlowerType.Citrus);
             flowerCalculator.SetFlowerFormula(FlowerType.Aureus, FlowerType.Viola, FlowerType.Fragrant);
+
+            flowerCalculator.SetFlowerFormula(FlowerType.Baccatus, FlowerType.Bluestar, true);
+            flowerCalculator.SetFlowerFormula(FlowerType.Baccatus, FlowerType.Tahitian, true);
 
             flowerCalculator.SetFlowerFormula(FlowerType.Blazing, FlowerType.Bluestar, FlowerType.Jalapa);
             flowerCalculator.SetFlowerFormula(FlowerType.Blazing, FlowerType.Citrus, FlowerType.Venomous);
@@ -56,6 +60,7 @@ namespace PlantTycoonHelper
             flowerCalculator.SetFlowerFormula(FlowerType.Blazing, FlowerType.Painted, FlowerType.Rosaceae);
             flowerCalculator.SetFlowerFormula(FlowerType.Blazing, FlowerType.Rosaceae, FlowerType.Fabled);
             flowerCalculator.SetFlowerFormula(FlowerType.Blazing, FlowerType.Spotted, FlowerType.Rosaceae);
+            flowerCalculator.SetFlowerFormula(FlowerType.Blazing, FlowerType.Tahitian, true);
             flowerCalculator.SetFlowerFormula(FlowerType.Blazing, FlowerType.Tilia, FlowerType.Arthurium);
             flowerCalculator.SetFlowerFormula(FlowerType.Blazing, FlowerType.Venomous, FlowerType.Aureus);
             flowerCalculator.SetFlowerFormula(FlowerType.Blazing, FlowerType.Venus, FlowerType.Mela);
@@ -114,6 +119,7 @@ namespace PlantTycoonHelper
             flowerCalculator.SetFlowerFormula(FlowerType.Fourpetal, FlowerType.Mystic, FlowerType.Fabled);
             flowerCalculator.SetFlowerFormula(FlowerType.Fourpetal, FlowerType.Nox, FlowerType.Jalapa);
             flowerCalculator.SetFlowerFormula(FlowerType.Fourpetal, FlowerType.Rosaceae, FlowerType.Fabled);
+            flowerCalculator.SetFlowerFormula(FlowerType.Fourpetal, FlowerType.Tahitian, true);
             flowerCalculator.SetFlowerFormula(FlowerType.Fourpetal, FlowerType.Venomous, FlowerType.Aureus);
             flowerCalculator.SetFlowerFormula(FlowerType.Fourpetal, FlowerType.Venus, FlowerType.Mela);
             flowerCalculator.SetFlowerFormula(FlowerType.Fourpetal, FlowerType.Viola, FlowerType.Fragrant);
@@ -124,7 +130,7 @@ namespace PlantTycoonHelper
             flowerCalculator.SetFlowerFormula(FlowerType.Fragrant, FlowerType.Mystic, FlowerType.Jalapa);
             flowerCalculator.SetFlowerFormula(FlowerType.Fragrant, FlowerType.Rosaceae, FlowerType.Jalapa);
             flowerCalculator.SetFlowerFormula(FlowerType.Fragrant, FlowerType.Spotted, FlowerType.Mystic);
-            flowerCalculator.SetFlowerFormula(FlowerType.Fragrant, FlowerType.Tahitian, true);
+            flowerCalculator.SetFlowerFormula(FlowerType.Fragrant, FlowerType.Tahitian, FlowerType.Mela);
             flowerCalculator.SetFlowerFormula(FlowerType.Fragrant, FlowerType.Tilia, FlowerType.Citrus);
             flowerCalculator.SetFlowerFormula(FlowerType.Fragrant, FlowerType.Venomous, FlowerType.Mela);
             flowerCalculator.SetFlowerFormula(FlowerType.Fragrant, FlowerType.Venus, FlowerType.Venomous);
@@ -141,8 +147,10 @@ namespace PlantTycoonHelper
             flowerCalculator.SetFlowerFormula(FlowerType.Jalapa, FlowerType.Venus, FlowerType.Aureus);
             flowerCalculator.SetFlowerFormula(FlowerType.Jalapa, FlowerType.Viola, FlowerType.Jalapa);
 
+            flowerCalculator.SetFlowerFormula(FlowerType.Lilia, FlowerType.Mela, true);
             flowerCalculator.SetFlowerFormula(FlowerType.Lilia, FlowerType.Venus, FlowerType.Tahitian);
 
+            flowerCalculator.SetFlowerFormula(FlowerType.Mela, FlowerType.Tahitian, true);
             flowerCalculator.SetFlowerFormula(FlowerType.Mela, FlowerType.Venomous, FlowerType.Mela);
             flowerCalculator.SetFlowerFormula(FlowerType.Mela, FlowerType.Venus, FlowerType.Arthurium);
             flowerCalculator.SetFlowerFormula(FlowerType.Mela, FlowerType.Viola, FlowerType.Blazing);
@@ -168,7 +176,7 @@ namespace PlantTycoonHelper
             flowerCalculator.SetFlowerFormula(FlowerType.Spotted, FlowerType.Venus, true);
             flowerCalculator.SetFlowerFormula(FlowerType.Spotted, FlowerType.Viola, FlowerType.Bluestar);
 
-            flowerCalculator.SetFlowerFormula(FlowerType.Tahitian, FlowerType.Tilia, true);
+            flowerCalculator.SetFlowerFormula(FlowerType.Tahitian, FlowerType.Tilia, FlowerType.Baccatus);
             flowerCalculator.SetFlowerFormula(FlowerType.Tahitian, FlowerType.Venus, true);
             flowerCalculator.SetFlowerFormula(FlowerType.Tahitian, FlowerType.Viola, FlowerType.Aureus);
 

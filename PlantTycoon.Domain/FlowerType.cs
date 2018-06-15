@@ -6,6 +6,7 @@ namespace PlantTycoon.Domain
     {
         Arthurium = 1,
         Aureus,
+        Baccatus,
         Blazing,
         Bluestar,
         Citrus,
