@@ -24,7 +24,8 @@ namespace PlantTycoon.Domain
         RareOak,
         Reptans,
         Scandens,
-        TigerFern
+        TigerFern,
+        Weeper
     }
 
     public static class PlantTypeExtensions
