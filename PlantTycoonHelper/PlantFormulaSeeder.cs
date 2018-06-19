@@ -104,6 +104,7 @@ namespace PlantTycoonHelper
             plantCalculator.SetPlantFormula(PlantType.Fanleaf, PlantType.TigerFern, PlantType.PipeCactus);
             plantCalculator.SetPlantFormula(PlantType.Fanleaf, PlantType.Weeper, PlantType.PearCactus);
 
+            plantCalculator.SetPlantFormula(PlantType.Fern, PlantType.Glaber, PlantType.Maple);
             plantCalculator.SetPlantFormula(PlantType.Fern, PlantType.Gladiatus, PlantType.Fern);
             plantCalculator.SetPlantFormula(PlantType.Fern, PlantType.Grass, PlantType.Astera);
             plantCalculator.SetPlantFormula(PlantType.Fern, PlantType.Lemonbush, PlantType.Maranta);
@@ -165,13 +166,15 @@ namespace PlantTycoonHelper
 
             plantCalculator.SetPlantFormula(PlantType.Maple, PlantType.Maranta, PlantType.Lemonbush);
             plantCalculator.SetPlantFormula(PlantType.Maple, PlantType.Multiflora, PlantType.Glaber);
-            plantCalculator.SetPlantFormula(PlantType.Maple, PlantType.Orchid, true);
+            plantCalculator.SetPlantFormula(PlantType.Maple, PlantType.Orchid, PlantType.Maranta);
             plantCalculator.SetPlantFormula(PlantType.Maple, PlantType.PearCactus, PlantType.PipeCactus);
             plantCalculator.SetPlantFormula(PlantType.Maple, PlantType.PipeCactus, PlantType.RareOak);
+            plantCalculator.SetPlantFormula(PlantType.Maple, PlantType.Pitcher, PlantType.BallCactus);
             plantCalculator.SetPlantFormula(PlantType.Maple, PlantType.RareOak, PlantType.RareOak);
             plantCalculator.SetPlantFormula(PlantType.Maple, PlantType.Reptans, PlantType.Fern);
             plantCalculator.SetPlantFormula(PlantType.Maple, PlantType.Scandens, PlantType.Ananas);
             plantCalculator.SetPlantFormula(PlantType.Maple, PlantType.TigerFern, PlantType.PearCactus);
+            plantCalculator.SetPlantFormula(PlantType.Maple, PlantType.Weeper, true);
 
             plantCalculator.SetPlantFormula(PlantType.Maranta, PlantType.Multiflora, PlantType.PearCactus);
             plantCalculator.SetPlantFormula(PlantType.Maranta, PlantType.Orchid, PlantType.Fern);
