@@ -39,7 +39,7 @@ namespace PlantTycoon.Domain
 
         private void ValidatePositionRow(int positionRow)
         {
-            if (positionRow < 0 || positionRow >= tableRows)
+            if (positionRow < 1 || positionRow > tableRows)
             {
                 throw new ArgumentException($"Wrong row number {positionRow}: must be between 0 and {tableRows - 1}");
             }
@@ -47,7 +47,7 @@ namespace PlantTycoon.Domain
 
         private void ValidatePositionColumn(int positionColumn)
         {
-            if (positionColumn < 0 || positionColumn >= tableColumns)
+            if (positionColumn < 1 || positionColumn > tableColumns)
             {
                 throw new ArgumentException($"Wrong column number {positionColumn}: must be between 0 and {tableColumns - 1}");
             }
