@@ -55,14 +55,14 @@ namespace PlantTycoonHelper
             flowerCalculator.SetFlowerFormula(FlowerType.Baccatus, FlowerType.Blazing, FlowerType.Citrus);
             flowerCalculator.SetFlowerFormula(FlowerType.Baccatus, FlowerType.Bluestar, FlowerType.Aureus);
             flowerCalculator.SetFlowerFormula(FlowerType.Baccatus, FlowerType.Citrus, FlowerType.Tahitian);
-            flowerCalculator.SetFlowerFormula(FlowerType.Baccatus, FlowerType.Fabled, true);
+            flowerCalculator.SetFlowerFormula(FlowerType.Baccatus, FlowerType.Fabled, FlowerType.Mela);
             flowerCalculator.SetFlowerFormula(FlowerType.Baccatus, FlowerType.Lilia, FlowerType.Baccatus);
             flowerCalculator.SetFlowerFormula(FlowerType.Baccatus, FlowerType.Painted, FlowerType.Blazing);
             flowerCalculator.SetFlowerFormula(FlowerType.Baccatus, FlowerType.Rosaceae, FlowerType.Venomous);
             flowerCalculator.SetFlowerFormula(FlowerType.Baccatus, FlowerType.Tahitian, FlowerType.Lilia);
             flowerCalculator.SetFlowerFormula(FlowerType.Baccatus, FlowerType.Venomous, FlowerType.Venus);
             flowerCalculator.SetFlowerFormula(FlowerType.Baccatus, FlowerType.Venus, FlowerType.Lilia);
-            flowerCalculator.SetFlowerFormula(FlowerType.Baccatus, FlowerType.Viola, true);
+            flowerCalculator.SetFlowerFormula(FlowerType.Baccatus, FlowerType.Viola, FlowerType.Venomous);
 
             flowerCalculator.SetFlowerFormula(FlowerType.Blazing, FlowerType.Bluestar, FlowerType.Jalapa);
             flowerCalculator.SetFlowerFormula(FlowerType.Blazing, FlowerType.Citrus, FlowerType.Venomous);
