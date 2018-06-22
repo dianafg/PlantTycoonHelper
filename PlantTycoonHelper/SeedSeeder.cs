@@ -5,11 +5,11 @@ using System.Linq;
 
 namespace PlantTycoonHelper
 {
-    public class SeedSeeder
+    public class SeedStorageSeeder
     {
         private readonly SeedCalculator calculator;
 
-        public SeedSeeder(SeedCalculator seedCalculator)
+        public SeedStorageSeeder(SeedCalculator seedCalculator)
         {
             this.calculator = seedCalculator;
         }
@@ -27,16 +27,16 @@ namespace PlantTycoonHelper
             calculator.SetSeed(Tuple.Create('A', 1, 9), FlowerType.Citrus, PlantType.RareOak);
             calculator.SetSeed(Tuple.Create('A', 1, 10), FlowerType.Bluestar, PlantType.Maranta);
 
-            calculator.SetSeed(Tuple.Create('A', 2, 1), FlowerType.Arthurium, PlantType.Ananas);
-            calculator.SetSeed(Tuple.Create('A', 2, 2), FlowerType.Arthurium, PlantType.Ananas);
-            calculator.SetSeed(Tuple.Create('A', 2, 3), FlowerType.Arthurium, PlantType.Ananas);
-            calculator.SetSeed(Tuple.Create('A', 2, 4), FlowerType.Arthurium, PlantType.Ananas);
-            calculator.SetSeed(Tuple.Create('A', 2, 5), FlowerType.Arthurium, PlantType.Ananas);
-            calculator.SetSeed(Tuple.Create('A', 2, 6), FlowerType.Arthurium, PlantType.Ananas);
-            calculator.SetSeed(Tuple.Create('A', 2, 7), FlowerType.Arthurium, PlantType.Ananas);
-            calculator.SetSeed(Tuple.Create('A', 2, 8), FlowerType.Arthurium, PlantType.Ananas);
-            calculator.SetSeed(Tuple.Create('A', 2, 9), FlowerType.Arthurium, PlantType.Ananas);
-            calculator.SetSeed(Tuple.Create('A', 2, 10), FlowerType.Arthurium, PlantType.Ananas);
+            calculator.SetSeed(Tuple.Create('A', 2, 1), FlowerType.Fragrant, PlantType.Grass);
+            calculator.SetSeed(Tuple.Create('A', 2, 2), FlowerType.Fragrant, PlantType.Gladiatus);
+            calculator.SetSeed(Tuple.Create('A', 2, 3), FlowerType.Bluestar, PlantType.Bamboo);
+            calculator.SetSeed(Tuple.Create('A', 2, 4), FlowerType.Mystic, PlantType.Bamboo);
+            calculator.SetSeed(Tuple.Create('A', 2, 5), FlowerType.Fragrant, PlantType.Fern);
+            calculator.SetSeed(Tuple.Create('A', 2, 6), FlowerType.Fragrant, PlantType.Lemonbush);
+            calculator.SetSeed(Tuple.Create('A', 2, 7), FlowerType.Rosaceae, PlantType.Ananas);
+            calculator.SetSeed(Tuple.Create('A', 2, 8), FlowerType.Fabled, PlantType.RareOak);
+            calculator.SetSeed(Tuple.Create('A', 2, 9), FlowerType.Rosaceae, PlantType.Maple);
+            calculator.SetSeed(Tuple.Create('A', 2, 10), FlowerType.Jalapa, PlantType.Maranta);
 
             calculator.SetSeed(Tuple.Create('A', 3, 1), FlowerType.Arthurium, PlantType.Ananas);
             calculator.SetSeed(Tuple.Create('A', 3, 2), FlowerType.Arthurium, PlantType.Ananas);
