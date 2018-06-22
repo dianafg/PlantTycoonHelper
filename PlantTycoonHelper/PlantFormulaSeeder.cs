@@ -20,6 +20,7 @@ namespace PlantTycoonHelper
             plantCalculator.SetPlantFormula(PlantType.Ananas, PlantType.Bamboo, PlantType.Fanleaf);
             plantCalculator.SetPlantFormula(PlantType.Ananas, PlantType.Fanleaf, PlantType.Maranta);
             plantCalculator.SetPlantFormula(PlantType.Ananas, PlantType.Glaber, PlantType.Maple);
+            plantCalculator.SetPlantFormula(PlantType.Ananas, PlantType.Gladiatus, true);
             plantCalculator.SetPlantFormula(PlantType.Ananas, PlantType.Grass, PlantType.Gladiatus);
             plantCalculator.SetPlantFormula(PlantType.Ananas, PlantType.Lemonbush, PlantType.Fanleaf);
             plantCalculator.SetPlantFormula(PlantType.Ananas, PlantType.Maple, PlantType.Lemonbush);
@@ -31,6 +32,7 @@ namespace PlantTycoonHelper
             plantCalculator.SetPlantFormula(PlantType.Ananas, PlantType.Reptans, PlantType.Astera);
             plantCalculator.SetPlantFormula(PlantType.Ananas, PlantType.RareOak, PlantType.Lemonbush);
             plantCalculator.SetPlantFormula(PlantType.Ananas, PlantType.TigerFern, PlantType.RareOak);
+            plantCalculator.SetPlantFormula(PlantType.Ananas, PlantType.Weeper, true);
 
             plantCalculator.SetPlantFormula(PlantType.Astera, PlantType.BallCactus, PlantType.Lemonbush);
             plantCalculator.SetPlantFormula(PlantType.Astera, PlantType.Bamboo, PlantType.Maranta);
