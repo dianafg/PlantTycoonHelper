@@ -9,6 +9,8 @@ namespace PlantTycoon.Data
 
         public DbSet<PlantFormula> PlantFormulas { get; set; }
 
+        public DbSet<Seed> Seeds { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(
