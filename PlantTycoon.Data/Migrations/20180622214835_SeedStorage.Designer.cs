@@ -11,9 +11,10 @@ using System;
 namespace PlantTycoon.Data.Migrations
 {
     [DbContext(typeof(PlantTycoonContext))]
-    partial class PlantTycoonContextModelSnapshot : ModelSnapshot
+    [Migration("20180622214835_SeedStorage")]
+    partial class SeedStorage
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

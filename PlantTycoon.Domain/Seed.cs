@@ -9,6 +9,7 @@ namespace PlantTycoon.Domain
         private static int tableColumns = 20;
         private static int tableRows = 4;
 
+        public int Id { get; protected set; }
         public Tuple<char, int, int> Position { get; set; }
         public FlowerType Flower { get; protected set; }
         public PlantType Plant { get; protected set; }

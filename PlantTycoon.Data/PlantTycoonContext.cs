@@ -17,5 +17,13 @@ namespace PlantTycoon.Data
                 @"Data Source=(localdb)\ProjectsV12;Initial Catalog=PlantTycoonHelper;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"
             );
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Seed>()
+                .Ignore(x => x.Position);
+        }
     }
 }
