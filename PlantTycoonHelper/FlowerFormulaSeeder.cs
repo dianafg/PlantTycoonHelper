@@ -56,6 +56,9 @@ namespace PlantTycoonHelper
             flowerCalculator.SetFlowerFormula(FlowerType.Baccatus, FlowerType.Bluestar, FlowerType.Aureus);
             flowerCalculator.SetFlowerFormula(FlowerType.Baccatus, FlowerType.Citrus, FlowerType.Tahitian);
             flowerCalculator.SetFlowerFormula(FlowerType.Baccatus, FlowerType.Fabled, FlowerType.Mela);
+            flowerCalculator.SetFlowerFormula(FlowerType.Baccatus, FlowerType.Fragrant, FlowerType.Citrus);
+            flowerCalculator.SetFlowerFormula(FlowerType.Baccatus, FlowerType.Jalapa, FlowerType.Mela);
+            flowerCalculator.SetFlowerFormula(FlowerType.Baccatus, FlowerType.Mela, true);
             flowerCalculator.SetFlowerFormula(FlowerType.Baccatus, FlowerType.Lilia, FlowerType.Baccatus);
             flowerCalculator.SetFlowerFormula(FlowerType.Baccatus, FlowerType.Painted, FlowerType.Blazing);
             flowerCalculator.SetFlowerFormula(FlowerType.Baccatus, FlowerType.Rosaceae, FlowerType.Venomous);
@@ -95,6 +98,7 @@ namespace PlantTycoonHelper
             flowerCalculator.SetFlowerFormula(FlowerType.Bluestar, FlowerType.Mela, FlowerType.Fragrant);
             flowerCalculator.SetFlowerFormula(FlowerType.Bluestar, FlowerType.Mystic, FlowerType.Mystic);
             flowerCalculator.SetFlowerFormula(FlowerType.Bluestar, FlowerType.Nox, FlowerType.Bluestar);
+            flowerCalculator.SetFlowerFormula(FlowerType.Bluestar, FlowerType.Painted, true);
             flowerCalculator.SetFlowerFormula(FlowerType.Bluestar, FlowerType.Rosaceae, FlowerType.Mystic);
             flowerCalculator.SetFlowerFormula(FlowerType.Bluestar, FlowerType.Spotted, FlowerType.Daisy);
             flowerCalculator.SetFlowerFormula(FlowerType.Bluestar, FlowerType.Tahitian, FlowerType.Fourpetal);
@@ -127,7 +131,8 @@ namespace PlantTycoonHelper
             flowerCalculator.SetFlowerFormula(FlowerType.Daisy, FlowerType.Mystic, FlowerType.Bluestar);
             flowerCalculator.SetFlowerFormula(FlowerType.Daisy, FlowerType.Rosaceae, FlowerType.Bluestar);
             flowerCalculator.SetFlowerFormula(FlowerType.Daisy, FlowerType.Spotted, FlowerType.Painted);
-            flowerCalculator.SetFlowerFormula(FlowerType.Daisy, FlowerType.Venomous, true);
+            flowerCalculator.SetFlowerFormula(FlowerType.Daisy, FlowerType.Venomous, FlowerType.Jalapa);
+            flowerCalculator.SetFlowerFormula(FlowerType.Daisy, FlowerType.Venus, FlowerType.Fragrant);
             flowerCalculator.SetFlowerFormula(FlowerType.Daisy, FlowerType.Viola, FlowerType.Mystic);
 
             flowerCalculator.SetFlowerFormula(FlowerType.Fabled, FlowerType.Fragrant, FlowerType.Fragrant);
@@ -178,6 +183,7 @@ namespace PlantTycoonHelper
             flowerCalculator.SetFlowerFormula(FlowerType.Jalapa, FlowerType.Rosaceae, FlowerType.Viola);
             flowerCalculator.SetFlowerFormula(FlowerType.Jalapa, FlowerType.Spotted, FlowerType.Bluestar);
             flowerCalculator.SetFlowerFormula(FlowerType.Jalapa, FlowerType.Tahitian, FlowerType.Venomous);
+            flowerCalculator.SetFlowerFormula(FlowerType.Jalapa, FlowerType.Painted, FlowerType.Mystic);
             flowerCalculator.SetFlowerFormula(FlowerType.Jalapa, FlowerType.Tilia, FlowerType.Mela);
             flowerCalculator.SetFlowerFormula(FlowerType.Jalapa, FlowerType.Venomous, FlowerType.Blazing);
             flowerCalculator.SetFlowerFormula(FlowerType.Jalapa, FlowerType.Venus, FlowerType.Aureus);
@@ -204,13 +210,14 @@ namespace PlantTycoonHelper
             flowerCalculator.SetFlowerFormula(FlowerType.Nox, FlowerType.Venus, FlowerType.Blazing);
 
             flowerCalculator.SetFlowerFormula(FlowerType.Mystic, FlowerType.Nox, FlowerType.Bluestar);
+            flowerCalculator.SetFlowerFormula(FlowerType.Mystic, FlowerType.Painted, true);
             flowerCalculator.SetFlowerFormula(FlowerType.Mystic, FlowerType.Rosaceae, FlowerType.Rosaceae);
             flowerCalculator.SetFlowerFormula(FlowerType.Mystic, FlowerType.Spotted, FlowerType.Nox);
             flowerCalculator.SetFlowerFormula(FlowerType.Mystic, FlowerType.Viola, FlowerType.Rosaceae);
 
             flowerCalculator.SetFlowerFormula(FlowerType.Painted, FlowerType.Rosaceae, FlowerType.Bluestar);
             flowerCalculator.SetFlowerFormula(FlowerType.Painted, FlowerType.Tahitian, FlowerType.Fragrant);
-            flowerCalculator.SetFlowerFormula(FlowerType.Painted, FlowerType.Venomous, true);
+            flowerCalculator.SetFlowerFormula(FlowerType.Painted, FlowerType.Venomous, FlowerType.Jalapa);
             flowerCalculator.SetFlowerFormula(FlowerType.Painted, FlowerType.Viola, FlowerType.Bluestar);
 
             flowerCalculator.SetFlowerFormula(FlowerType.Rosaceae, FlowerType.Spotted, FlowerType.Nox);
