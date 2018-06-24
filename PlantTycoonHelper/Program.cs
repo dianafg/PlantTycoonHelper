@@ -13,15 +13,19 @@ namespace PlantTycoonHelper
     {
         private static FlowerCalculator flowerCalculator;
         private static PlantCalculator plantCalculator;
+        private static SeedCalculator seedCalculator;
         private static FlowerFormulaSeeder flowerSeeder;
         private static PlantFormulaSeeder plantSeeder;
+        private static SeedStorageSeeder seedSeeder;
 
         static void Main(string[] args)
         {
             flowerCalculator = new FlowerCalculator();
             plantCalculator = new PlantCalculator();
+            seedCalculator = new SeedCalculator();
             flowerSeeder = new FlowerFormulaSeeder(flowerCalculator);
             plantSeeder = new PlantFormulaSeeder(plantCalculator);
+            seedSeeder = new SeedStorageSeeder(seedCalculator);
 
             //CalculateFlowers();
             //CalculatePlants();
@@ -104,6 +108,18 @@ namespace PlantTycoonHelper
                                     .ForEach(x => Console.WriteLine($"{x.ToString()}"));
                                 break;
 
+                            case "SS":  //Seed Storage
+                                var seeds = seedCalculator.ReportSeeds();
+                                seeds
+                                    .ForEach(x => Console.WriteLine($"{x.Flower.ToString()} {x.Plant.ToString()}"));
+                                break;
+
+                            case "RS":  //Reverse seed Storage
+                                var seedsReverse = seedCalculator.ReportSeedsReverse();
+                                seedsReverse
+                                    .ForEach(x => Console.WriteLine($"{x.Flower.ToString()} {x.Plant.ToString()}"));
+                                break;
+
                             case "UPDATE":  //Update formulas
                                 ReseedFormulas();
                                 break;
@@ -152,6 +168,7 @@ namespace PlantTycoonHelper
 
             flowerSeeder.Reseed();
             plantSeeder.Reseed();
+            seedSeeder.Reseed();
         }
 
         static void ListFlowerCombinations()

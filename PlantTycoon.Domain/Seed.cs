@@ -14,6 +14,8 @@ namespace PlantTycoon.Domain
         public FlowerType Flower { get; protected set; }
         public PlantType Plant { get; protected set; }
 
+        protected Seed() { }
+
         public Seed(Tuple<char, int, int> position, FlowerType flower, PlantType plant)
         {
             ValidatePosition(position);
