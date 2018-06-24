@@ -77,8 +77,8 @@ namespace PlantTycoonHelper
 
                             case "LP":  //List plants
                                 var allPlantFormulas = plantCalculator.ReportAllOrdered();
-                                var allPlantFormulasWithResult = allPlantFormulas.Where(x => x.Result != null).ToList();
-                                var allPlantFormulasWithEmptyResult = allPlantFormulas.Where(x => x.Result == null).ToList();
+                                var allPlantFormulasWithResult = allPlantFormulas.Where(x => x.Result != null || x.InProgress).ToList();
+                                var allPlantFormulasWithEmptyResult = allPlantFormulas.Where(x => x.Result == null && x.InProgress == false).ToList();
                                 Console.WriteLine("\nWith result: -------");
                                 allPlantFormulasWithResult
                                     .ForEach(x => Console.WriteLine(
