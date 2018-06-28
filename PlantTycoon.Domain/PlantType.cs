@@ -23,6 +23,7 @@ namespace PlantTycoon.Domain
         Pitcher,
         RareOak,
         Reptans,
+        Ridgeball,
         Scandens,
         TigerFern,
         Weeper

@@ -76,6 +76,7 @@ namespace PlantTycoonHelper
             plantCalculator.SetPlantFormula(PlantType.BallCactus, PlantType.Reptans, PlantType.Maranta);
             plantCalculator.SetPlantFormula(PlantType.BallCactus, PlantType.Scandens, PlantType.Fanleaf);
             plantCalculator.SetPlantFormula(PlantType.BallCactus, PlantType.TigerFern, PlantType.Glaber);
+            plantCalculator.SetPlantFormula(PlantType.BallCactus, PlantType.Weeper, PlantType.TigerFern);
 
             plantCalculator.SetPlantFormula(PlantType.Bamboo, PlantType.Fanleaf, PlantType.Lemonbush);
             plantCalculator.SetPlantFormula(PlantType.Bamboo, PlantType.Fern, PlantType.Fanleaf);

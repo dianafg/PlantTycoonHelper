@@ -71,7 +71,7 @@ namespace PlantTycoonHelper
             calculator.SetSeed(Tuple.Create('B', 1, 7), FlowerType.Bluestar, PlantType.Maple);
             calculator.SetSeed(Tuple.Create('B', 1, 8), FlowerType.Venus, PlantType.TigerFern);
             calculator.SetSeed(Tuple.Create('B', 1, 9), FlowerType.Mela, PlantType.Fanleaf);
-            calculator.SetSeed(Tuple.Create('B', 1, 10), FlowerType.Baccatus, PlantType.Bamboo);
+            calculator.SetSeed(Tuple.Create('B', 1, 10), 0, 0);
 
             calculator.SetSeed(Tuple.Create('B', 2, 1), FlowerType.Venus, PlantType.Glaber);
             calculator.SetSeed(Tuple.Create('B', 2, 2), FlowerType.Fabled, PlantType.Lemonbush);
