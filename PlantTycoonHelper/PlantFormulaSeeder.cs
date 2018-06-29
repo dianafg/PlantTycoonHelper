@@ -31,8 +31,9 @@ namespace PlantTycoonHelper
             plantCalculator.SetPlantFormula(PlantType.Ananas, PlantType.PearCactus, PlantType.Bamboo);
             plantCalculator.SetPlantFormula(PlantType.Ananas, PlantType.PipeCactus, PlantType.Bamboo);
             plantCalculator.SetPlantFormula(PlantType.Ananas, PlantType.Pitcher, PlantType.RareOak);
-            plantCalculator.SetPlantFormula(PlantType.Ananas, PlantType.Reptans, PlantType.Astera);
             plantCalculator.SetPlantFormula(PlantType.Ananas, PlantType.RareOak, PlantType.Lemonbush);
+            plantCalculator.SetPlantFormula(PlantType.Ananas, PlantType.Reptans, PlantType.Astera);
+            plantCalculator.SetPlantFormula(PlantType.Ananas, PlantType.Ridgeball, PlantType.PearCactus);
             plantCalculator.SetPlantFormula(PlantType.Ananas, PlantType.Scandens, PlantType.Astera);
             plantCalculator.SetPlantFormula(PlantType.Ananas, PlantType.TigerFern, PlantType.RareOak);
             plantCalculator.SetPlantFormula(PlantType.Ananas, PlantType.Weeper, PlantType.PipeCactus);
@@ -54,6 +55,7 @@ namespace PlantTycoonHelper
             plantCalculator.SetPlantFormula(PlantType.Astera, PlantType.Pitcher, PlantType.Maple);
             plantCalculator.SetPlantFormula(PlantType.Astera, PlantType.RareOak, PlantType.Fanleaf);
             plantCalculator.SetPlantFormula(PlantType.Astera, PlantType.Reptans, PlantType.Grass);
+            plantCalculator.SetPlantFormula(PlantType.Astera, PlantType.Ridgeball, PlantType.RareOak);
             plantCalculator.SetPlantFormula(PlantType.Astera, PlantType.Scandens, PlantType.Orchid);
             plantCalculator.SetPlantFormula(PlantType.Astera, PlantType.TigerFern, PlantType.Bamboo);
             plantCalculator.SetPlantFormula(PlantType.Astera, PlantType.Weeper, PlantType.Maple);
@@ -74,6 +76,7 @@ namespace PlantTycoonHelper
             plantCalculator.SetPlantFormula(PlantType.BallCactus, PlantType.Pitcher, PlantType.TigerFern);
             plantCalculator.SetPlantFormula(PlantType.BallCactus, PlantType.RareOak, PlantType.PearCactus);
             plantCalculator.SetPlantFormula(PlantType.BallCactus, PlantType.Reptans, PlantType.Maranta);
+            plantCalculator.SetPlantFormula(PlantType.BallCactus, PlantType.Ridgeball, PlantType.Pitcher);
             plantCalculator.SetPlantFormula(PlantType.BallCactus, PlantType.Scandens, PlantType.Fanleaf);
             plantCalculator.SetPlantFormula(PlantType.BallCactus, PlantType.TigerFern, PlantType.Glaber);
             plantCalculator.SetPlantFormula(PlantType.BallCactus, PlantType.Weeper, PlantType.TigerFern);
@@ -93,6 +96,7 @@ namespace PlantTycoonHelper
             plantCalculator.SetPlantFormula(PlantType.Bamboo, PlantType.PipeCactus, PlantType.RareOak);
             plantCalculator.SetPlantFormula(PlantType.Bamboo, PlantType.RareOak, PlantType.Maple);
             plantCalculator.SetPlantFormula(PlantType.Bamboo, PlantType.Reptans, PlantType.Fern);
+            plantCalculator.SetPlantFormula(PlantType.Bamboo, PlantType.Ridgeball, PlantType.Glaber);
             plantCalculator.SetPlantFormula(PlantType.Bamboo, PlantType.Scandens, PlantType.Fern);
             plantCalculator.SetPlantFormula(PlantType.Bamboo, PlantType.TigerFern, PlantType.PearCactus);
             plantCalculator.SetPlantFormula(PlantType.Bamboo, PlantType.Weeper, PlantType.BallCactus);
@@ -111,6 +115,7 @@ namespace PlantTycoonHelper
             plantCalculator.SetPlantFormula(PlantType.Fanleaf, PlantType.Pitcher, PlantType.PipeCactus);
             plantCalculator.SetPlantFormula(PlantType.Fanleaf, PlantType.RareOak, PlantType.Bamboo);
             plantCalculator.SetPlantFormula(PlantType.Fanleaf, PlantType.Reptans, PlantType.Gladiatus);
+            plantCalculator.SetPlantFormula(PlantType.Fanleaf, PlantType.Ridgeball, PlantType.BallCactus);
             plantCalculator.SetPlantFormula(PlantType.Fanleaf, PlantType.Scandens, PlantType.Gladiatus);
             plantCalculator.SetPlantFormula(PlantType.Fanleaf, PlantType.TigerFern, PlantType.PipeCactus);
             plantCalculator.SetPlantFormula(PlantType.Fanleaf, PlantType.Weeper, PlantType.PearCactus);
@@ -128,6 +133,7 @@ namespace PlantTycoonHelper
             plantCalculator.SetPlantFormula(PlantType.Fern, PlantType.Pitcher, PlantType.RareOak);
             plantCalculator.SetPlantFormula(PlantType.Fern, PlantType.RareOak, PlantType.Lemonbush);
             plantCalculator.SetPlantFormula(PlantType.Fern, PlantType.Reptans, PlantType.Orchid);
+            plantCalculator.SetPlantFormula(PlantType.Fern, PlantType.Ridgeball, PlantType.PipeCactus);
             plantCalculator.SetPlantFormula(PlantType.Fern, PlantType.Scandens, PlantType.Astera);
             plantCalculator.SetPlantFormula(PlantType.Fern, PlantType.TigerFern, PlantType.Maple);
             plantCalculator.SetPlantFormula(PlantType.Fern, PlantType.Weeper, PlantType.RareOak);
@@ -144,6 +150,7 @@ namespace PlantTycoonHelper
             plantCalculator.SetPlantFormula(PlantType.Glaber, PlantType.Pitcher, PlantType.TigerFern);
             plantCalculator.SetPlantFormula(PlantType.Glaber, PlantType.RareOak, PlantType.PearCactus);
             plantCalculator.SetPlantFormula(PlantType.Glaber, PlantType.Reptans, PlantType.Fanleaf);
+            plantCalculator.SetPlantFormula(PlantType.Glaber, PlantType.Ridgeball, PlantType.Weeper);
             plantCalculator.SetPlantFormula(PlantType.Glaber, PlantType.Scandens, PlantType.Fanleaf);
             plantCalculator.SetPlantFormula(PlantType.Glaber, PlantType.TigerFern, PlantType.TigerFern);
             plantCalculator.SetPlantFormula(PlantType.Glaber, PlantType.Weeper, PlantType.Pitcher);
@@ -159,6 +166,7 @@ namespace PlantTycoonHelper
             plantCalculator.SetPlantFormula(PlantType.Gladiatus, PlantType.Pitcher, PlantType.Maple);
             plantCalculator.SetPlantFormula(PlantType.Gladiatus, PlantType.RareOak, PlantType.Fanleaf);
             plantCalculator.SetPlantFormula(PlantType.Gladiatus, PlantType.Reptans, PlantType.Orchid);
+            plantCalculator.SetPlantFormula(PlantType.Gladiatus, PlantType.Ridgeball, PlantType.PipeCactus);
             plantCalculator.SetPlantFormula(PlantType.Gladiatus, PlantType.Scandens, PlantType.Orchid);
             plantCalculator.SetPlantFormula(PlantType.Gladiatus, PlantType.TigerFern, PlantType.Maple);
             plantCalculator.SetPlantFormula(PlantType.Gladiatus, PlantType.Weeper, PlantType.RareOak);
@@ -173,6 +181,7 @@ namespace PlantTycoonHelper
             plantCalculator.SetPlantFormula(PlantType.Grass, PlantType.Pitcher, PlantType.Bamboo);
             plantCalculator.SetPlantFormula(PlantType.Grass, PlantType.RareOak, PlantType.Maranta);
             plantCalculator.SetPlantFormula(PlantType.Grass, PlantType.Reptans, PlantType.Scandens);
+            plantCalculator.SetPlantFormula(PlantType.Grass, PlantType.Ridgeball, PlantType.Maple);
             plantCalculator.SetPlantFormula(PlantType.Grass, PlantType.Scandens, PlantType.Grass);
             plantCalculator.SetPlantFormula(PlantType.Grass, PlantType.TigerFern, PlantType.Lemonbush);
             plantCalculator.SetPlantFormula(PlantType.Grass, PlantType.Weeper, PlantType.Bamboo);
@@ -183,9 +192,10 @@ namespace PlantTycoonHelper
             plantCalculator.SetPlantFormula(PlantType.Lemonbush, PlantType.Orchid, PlantType.Ananas);
             plantCalculator.SetPlantFormula(PlantType.Lemonbush, PlantType.PearCactus, PlantType.RareOak);
             plantCalculator.SetPlantFormula(PlantType.Lemonbush, PlantType.PipeCactus, PlantType.Maple);
-            plantCalculator.SetPlantFormula(PlantType.Lemonbush, PlantType.Pitcher, PlantType.Ananas);
+            plantCalculator.SetPlantFormula(PlantType.Lemonbush, PlantType.Pitcher, PlantType.PearCactus);
             plantCalculator.SetPlantFormula(PlantType.Lemonbush, PlantType.RareOak, PlantType.Maple);
             plantCalculator.SetPlantFormula(PlantType.Lemonbush, PlantType.Reptans, PlantType.Gladiatus);
+            plantCalculator.SetPlantFormula(PlantType.Lemonbush, PlantType.Ridgeball, PlantType.BallCactus);
             plantCalculator.SetPlantFormula(PlantType.Lemonbush, PlantType.Scandens, PlantType.Fern);
             plantCalculator.SetPlantFormula(PlantType.Lemonbush, PlantType.TigerFern, PlantType.PipeCactus);
             plantCalculator.SetPlantFormula(PlantType.Lemonbush, PlantType.Weeper, PlantType.PearCactus);
@@ -198,6 +208,7 @@ namespace PlantTycoonHelper
             plantCalculator.SetPlantFormula(PlantType.Maple, PlantType.Pitcher, PlantType.BallCactus);
             plantCalculator.SetPlantFormula(PlantType.Maple, PlantType.RareOak, PlantType.RareOak);
             plantCalculator.SetPlantFormula(PlantType.Maple, PlantType.Reptans, PlantType.Fern);
+            plantCalculator.SetPlantFormula(PlantType.Maple, PlantType.Ridgeball, PlantType.Glaber);
             plantCalculator.SetPlantFormula(PlantType.Maple, PlantType.Scandens, PlantType.Ananas);
             plantCalculator.SetPlantFormula(PlantType.Maple, PlantType.TigerFern, PlantType.PearCactus);
             plantCalculator.SetPlantFormula(PlantType.Maple, PlantType.Weeper, PlantType.BallCactus);
@@ -209,6 +220,7 @@ namespace PlantTycoonHelper
             plantCalculator.SetPlantFormula(PlantType.Maranta, PlantType.Pitcher, PlantType.PipeCactus);
             plantCalculator.SetPlantFormula(PlantType.Maranta, PlantType.RareOak, PlantType.Bamboo);
             plantCalculator.SetPlantFormula(PlantType.Maranta, PlantType.Reptans, PlantType.Bamboo);
+            plantCalculator.SetPlantFormula(PlantType.Maranta, PlantType.Ridgeball, PlantType.PearCactus);
             plantCalculator.SetPlantFormula(PlantType.Maranta, PlantType.Scandens, PlantType.Gladiatus);
             plantCalculator.SetPlantFormula(PlantType.Maranta, PlantType.TigerFern, PlantType.RareOak);
             plantCalculator.SetPlantFormula(PlantType.Maranta, PlantType.Weeper, PlantType.PipeCactus);
@@ -219,6 +231,7 @@ namespace PlantTycoonHelper
             plantCalculator.SetPlantFormula(PlantType.Multiflora, PlantType.Pitcher, PlantType.Weeper);
             plantCalculator.SetPlantFormula(PlantType.Multiflora, PlantType.RareOak, PlantType.Glaber);
             plantCalculator.SetPlantFormula(PlantType.Multiflora, PlantType.Reptans, PlantType.Bamboo);
+            plantCalculator.SetPlantFormula(PlantType.Multiflora, PlantType.Ridgeball, PlantType.Ridgeball);
             plantCalculator.SetPlantFormula(PlantType.Multiflora, PlantType.Scandens, PlantType.Bamboo);
             plantCalculator.SetPlantFormula(PlantType.Multiflora, PlantType.TigerFern, PlantType.Weeper);
             plantCalculator.SetPlantFormula(PlantType.Multiflora, PlantType.Weeper, PlantType.Multiflora);
@@ -228,6 +241,7 @@ namespace PlantTycoonHelper
             plantCalculator.SetPlantFormula(PlantType.Orchid, PlantType.Pitcher, PlantType.Bamboo);
             plantCalculator.SetPlantFormula(PlantType.Orchid, PlantType.RareOak, PlantType.Maranta);
             plantCalculator.SetPlantFormula(PlantType.Orchid, PlantType.Reptans, PlantType.Grass);
+            plantCalculator.SetPlantFormula(PlantType.Orchid, PlantType.Ridgeball, PlantType.RareOak);
             plantCalculator.SetPlantFormula(PlantType.Orchid, PlantType.Scandens, PlantType.Grass);
             plantCalculator.SetPlantFormula(PlantType.Orchid, PlantType.TigerFern, PlantType.Bamboo);
             plantCalculator.SetPlantFormula(PlantType.Orchid, PlantType.Weeper, PlantType.Maple);
@@ -236,6 +250,7 @@ namespace PlantTycoonHelper
             plantCalculator.SetPlantFormula(PlantType.PearCactus, PlantType.Pitcher, PlantType.Glaber);
             plantCalculator.SetPlantFormula(PlantType.PearCactus, PlantType.RareOak, PlantType.PipeCactus);
             plantCalculator.SetPlantFormula(PlantType.PearCactus, PlantType.Reptans, PlantType.Maranta);
+            plantCalculator.SetPlantFormula(PlantType.PearCactus, PlantType.Ridgeball, PlantType.Pitcher);
             plantCalculator.SetPlantFormula(PlantType.PearCactus, PlantType.Scandens, PlantType.Maranta);
             plantCalculator.SetPlantFormula(PlantType.PearCactus, PlantType.TigerFern, PlantType.Glaber);
             plantCalculator.SetPlantFormula(PlantType.PearCactus, PlantType.Weeper, PlantType.TigerFern);
@@ -243,23 +258,32 @@ namespace PlantTycoonHelper
             plantCalculator.SetPlantFormula(PlantType.PipeCactus, PlantType.Pitcher, PlantType.Glaber);
             plantCalculator.SetPlantFormula(PlantType.PipeCactus, PlantType.RareOak, PlantType.PipeCactus);
             plantCalculator.SetPlantFormula(PlantType.PipeCactus, PlantType.Reptans, PlantType.Ananas);
+            plantCalculator.SetPlantFormula(PlantType.PipeCactus, PlantType.Ridgeball, PlantType.TigerFern);
             plantCalculator.SetPlantFormula(PlantType.PipeCactus, PlantType.Scandens, PlantType.Maranta);
             plantCalculator.SetPlantFormula(PlantType.PipeCactus, PlantType.TigerFern, PlantType.BallCactus);
             plantCalculator.SetPlantFormula(PlantType.PipeCactus, PlantType.Weeper, PlantType.Glaber);
 
             plantCalculator.SetPlantFormula(PlantType.Pitcher, PlantType.RareOak, PlantType.BallCactus);
             plantCalculator.SetPlantFormula(PlantType.Pitcher, PlantType.Reptans, PlantType.Lemonbush);
+            plantCalculator.SetPlantFormula(PlantType.Pitcher, PlantType.Ridgeball, PlantType.Multiflora);
             plantCalculator.SetPlantFormula(PlantType.Pitcher, PlantType.Scandens, PlantType.Lemonbush);
             plantCalculator.SetPlantFormula(PlantType.Pitcher, PlantType.TigerFern, PlantType.Pitcher);
             plantCalculator.SetPlantFormula(PlantType.Pitcher, PlantType.Weeper, PlantType.Weeper);
 
             plantCalculator.SetPlantFormula(PlantType.RareOak, PlantType.Reptans, PlantType.Ananas);
+            plantCalculator.SetPlantFormula(PlantType.RareOak, PlantType.Ridgeball, PlantType.TigerFern);
             plantCalculator.SetPlantFormula(PlantType.RareOak, PlantType.TigerFern, PlantType.BallCactus);
             plantCalculator.SetPlantFormula(PlantType.RareOak, PlantType.Scandens, PlantType.Ananas);
             plantCalculator.SetPlantFormula(PlantType.RareOak, PlantType.Weeper, PlantType.Glaber);
 
+            plantCalculator.SetPlantFormula(PlantType.Reptans, PlantType.Ridgeball, PlantType.Ridgeball);
             plantCalculator.SetPlantFormula(PlantType.Reptans, PlantType.Scandens, PlantType.Scandens);
             plantCalculator.SetPlantFormula(PlantType.Reptans, PlantType.TigerFern, PlantType.Fanleaf);
+            plantCalculator.SetPlantFormula(PlantType.Reptans, PlantType.Weeper, PlantType.Lemonbush);
+
+            plantCalculator.SetPlantFormula(PlantType.Ridgeball, PlantType.Scandens, PlantType.Maple);
+            plantCalculator.SetPlantFormula(PlantType.Ridgeball, PlantType.TigerFern, PlantType.Weeper);
+            plantCalculator.SetPlantFormula(PlantType.Ridgeball, PlantType.Weeper, PlantType.Multiflora);
 
             plantCalculator.SetPlantFormula(PlantType.Scandens, PlantType.TigerFern, PlantType.Lemonbush);
             plantCalculator.SetPlantFormula(PlantType.Scandens, PlantType.Weeper, PlantType.Bamboo);
