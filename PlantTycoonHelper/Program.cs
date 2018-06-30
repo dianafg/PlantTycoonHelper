@@ -17,6 +17,7 @@ namespace PlantTycoonHelper
         private static FlowerFormulaSeeder flowerSeeder;
         private static StemFormulaSeeder stemSeeder;
         private static SeedStorageSeeder seedSeeder;
+        private static Catalog catalog;
 
         static void Main(string[] args)
         {
@@ -26,6 +27,7 @@ namespace PlantTycoonHelper
             flowerSeeder = new FlowerFormulaSeeder(flowerCalculator);
             stemSeeder = new StemFormulaSeeder(stemCalculator);
             seedSeeder = new SeedStorageSeeder(seedCalculator);
+            catalog = new Catalog();
 
             //CalculateFlowers();
             //CalculateStems();
@@ -169,6 +171,7 @@ namespace PlantTycoonHelper
             flowerSeeder.Reseed();
             stemSeeder.Reseed();
             seedSeeder.Reseed();
+            catalog.Reseed();
         }
 
         static void ListFlowerCombinations()

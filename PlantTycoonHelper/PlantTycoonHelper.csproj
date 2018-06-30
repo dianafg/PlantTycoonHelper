@@ -14,4 +14,10 @@
     <ProjectReference Include="..\PlantTycoon.Domain\PlantTycoon.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Catalog.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

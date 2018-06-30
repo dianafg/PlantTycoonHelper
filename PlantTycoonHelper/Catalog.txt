@@ -21,14 +21,14 @@ Mela Fanleaf
 FourPetal Astera
 Rosaceae Ananas
 FourPetal BallCactus
-FourPtal Pitcher
+FourPetal Pitcher
 Rosaceae Multiflora
 Painted RidgeBall
 
 Nox Weeper
-Daisy Lemobush
+Daisy Lemonbush
 Venus PipeCactus
-Mystic Glaaber
+Mystic Glaber
 Painted RidgeBall
 Fragrant Pitcher
 Painted RidgeBall
@@ -124,7 +124,7 @@ FourPetal Bamboo
 FourPetal Maranta
 Viola PearCactus
 Rosaceae Scandens
-Daisy Lemobush
+Daisy Lemonbush
 Arthurium Fern
 Fabled Bamboo
 
@@ -446,10 +446,10 @@ Bluestar Maple
 Jalapa Astera
 Rosaceae Maranta
 
-Maple Citrus
+Citrus Maple
 Blazing Fanleaf
 Citrus Reptans
-Daisy Lemnonbush
+Daisy Lemonbush
 Fabled Gladiatus
 Citrus Reptans
 Nox Maple

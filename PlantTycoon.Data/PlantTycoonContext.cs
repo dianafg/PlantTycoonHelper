@@ -9,6 +9,8 @@ namespace PlantTycoon.Data
 
         public DbSet<StemFormula> StemFormulas { get; set; }
 
+        public DbSet<Plant> Plants { get; set; }
+
         public DbSet<Seed> Seeds { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

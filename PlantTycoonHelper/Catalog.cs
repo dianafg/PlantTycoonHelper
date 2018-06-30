@@ -1,4 +1,5 @@
-﻿using PlantTycoon.Domain;
+﻿using PlantTycoon.Data;
+using PlantTycoon.Domain;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -11,6 +12,21 @@ namespace PlantTycoonHelper
         public Catalog()
         {
             Initialize();
+        }
+
+        public void Reseed()
+        {
+            using (var dbContext = new PlantTycoonContext())
+            {
+                InitializeEmptyCatalog(dbContext);
+                dbContext.AddRange(Plants);
+                dbContext.SaveChanges();
+            }
+        }
+
+        protected void InitializeEmptyCatalog(PlantTycoonContext dbContext)
+        {
+            dbContext.Plants.RemoveRange(dbContext.Plants.Where(x => 1 == 1));
         }
 
         protected void Add(Plant plant)
@@ -59,9 +75,9 @@ namespace PlantTycoonHelper
 
         public HashSet<string> ReadAllDistinctWithoutEmptyLines()
         {
-            ICollection<string> lines = System.IO.File.ReadAllLines(this.filePath);
+            HashSet<string> lines = System.IO.File.ReadAllLines(this.filePath).ToHashSet();
             lines.Remove(string.Empty);
-            return lines.Distinct().ToHashSet();
+            return lines;
         }
     }
 }
