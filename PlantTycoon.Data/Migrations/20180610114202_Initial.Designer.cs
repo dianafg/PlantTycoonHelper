@@ -39,22 +39,22 @@ namespace PlantTycoon.Data.Migrations
                     b.ToTable("FlowerFormulas");
                 });
 
-            modelBuilder.Entity("PlantTycoon.Domain.PlantFormula", b =>
+            modelBuilder.Entity("PlantTycoon.Domain.StemFormula", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<bool>("InProgress");
 
-                    b.Property<int>("PlantA");
+                    b.Property<int>("StemA");
 
-                    b.Property<int>("PlantB");
+                    b.Property<int>("StemB");
 
                     b.Property<int?>("Result");
 
                     b.HasKey("Id");
 
-                    b.ToTable("PlantFormulas");
+                    b.ToTable("StemFormulas");
                 });
 #pragma warning restore 612, 618
         }

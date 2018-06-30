@@ -17,12 +17,12 @@ namespace PlantTycoonHelper
             }
         }
 
-        public void SetSeed(Tuple<char, int, int> position, FlowerType flower, PlantType plant)
+        public void SetSeed(Tuple<char, int, int> position, FlowerType flower, StemType stem)
         {
             using (var dbContext = new PlantTycoonContext())
             {
                 //var seed = dbContext.Seeds.FirstOrDefault(x => x.Position == position);
-                var seed = new Seed(position, flower, plant);
+                var seed = new Seed(position, flower, stem);
                 dbContext.Seeds.Add(seed);
                 dbContext.SaveChanges();
             }
@@ -34,7 +34,7 @@ namespace PlantTycoonHelper
             {
                 var seeds = dbContext.Seeds
                     .OrderBy(x => x.Flower)
-                    .ThenBy(x => x.Plant)
+                    .ThenBy(x => x.Stem)
                     .ToList();
                 return seeds;
             }
@@ -45,7 +45,7 @@ namespace PlantTycoonHelper
             using (var dbContext = new PlantTycoonContext())
             {
                 var seeds = dbContext.Seeds
-                    .OrderBy(x => x.Plant)
+                    .OrderBy(x => x.Stem)
                     .ThenBy(x => x.Flower)
                     .ToList();
                 return seeds;

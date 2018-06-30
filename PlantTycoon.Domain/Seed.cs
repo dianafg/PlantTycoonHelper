@@ -12,16 +12,16 @@ namespace PlantTycoon.Domain
         public int Id { get; protected set; }
         public Tuple<char, int, int> Position { get; set; }
         public FlowerType Flower { get; protected set; }
-        public PlantType Plant { get; protected set; }
+        public StemType Stem { get; protected set; }
 
         protected Seed() { }
 
-        public Seed(Tuple<char, int, int> position, FlowerType flower, PlantType plant)
+        public Seed(Tuple<char, int, int> position, FlowerType flower, StemType stem)
         {
             ValidatePosition(position);
             this.Position = position;
             this.Flower = flower;
-            this.Plant = plant;
+            this.Stem = stem;
         }
 
         private void ValidatePosition(Tuple<char, int, int> position)

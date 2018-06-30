@@ -16,7 +16,7 @@ namespace PlantTycoon.Data.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Flower = table.Column<int>(nullable: false),
-                    Plant = table.Column<int>(nullable: false)
+                    Stem = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {

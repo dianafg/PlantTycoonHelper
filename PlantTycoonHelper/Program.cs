@@ -12,37 +12,37 @@ namespace PlantTycoonHelper
     class Program
     {
         private static FlowerCalculator flowerCalculator;
-        private static PlantCalculator plantCalculator;
+        private static StemCalculator stemCalculator;
         private static SeedCalculator seedCalculator;
         private static FlowerFormulaSeeder flowerSeeder;
-        private static PlantFormulaSeeder plantSeeder;
+        private static StemFormulaSeeder stemSeeder;
         private static SeedStorageSeeder seedSeeder;
 
         static void Main(string[] args)
         {
             flowerCalculator = new FlowerCalculator();
-            plantCalculator = new PlantCalculator();
+            stemCalculator = new StemCalculator();
             seedCalculator = new SeedCalculator();
             flowerSeeder = new FlowerFormulaSeeder(flowerCalculator);
-            plantSeeder = new PlantFormulaSeeder(plantCalculator);
+            stemSeeder = new StemFormulaSeeder(stemCalculator);
             seedSeeder = new SeedStorageSeeder(seedCalculator);
 
             //CalculateFlowers();
-            //CalculatePlants();
+            //CalculateStems();
 
             ReseedFormulas();
 
-            LoopForFlowerOrPlantType();
+            LoopForFlowerOrStemType();
         }
 
-        static void LoopForFlowerOrPlantType()
+        static void LoopForFlowerOrStemType()
         {
             while (true)
             {
                 Console.WriteLine("\nEnter command:");
                 var input = Console.ReadLine();
                 Console.WriteLine("---------------");
-                var parsedInput = ParseFlowerOrPlantInput(input);
+                var parsedInput = ParseFlowerOrStemInput(input);
                 switch (parsedInput)
                 {
                     case string command:
@@ -55,11 +55,11 @@ namespace PlantTycoonHelper
                                         $"{x.FlowerA.ToString()} + {x.FlowerB.ToString()} = {x.Result?.ToString()}{ComposeInProgressString(x.InProgress)}"));
                                 break;
 
-                            case "AP":  //All plant combinations
-                                var allPlantFormulasAF = plantCalculator.ReportAllOrdered();
-                                allPlantFormulasAF
+                            case "AP":  //All stem combinations
+                                var allStemFormulasAF = stemCalculator.ReportAllOrdered();
+                                allStemFormulasAF
                                     .ForEach(x => Console.WriteLine(
-                                        $"{x.PlantA.ToString()} + {x.PlantB.ToString()} = {x.Result?.ToString()}{ComposeInProgressString(x.InProgress)}"));
+                                        $"{x.StemA.ToString()} + {x.StemB.ToString()} = {x.Result?.ToString()}{ComposeInProgressString(x.InProgress)}"));
                                 break;
 
                             case "LF":  //List flowers
@@ -75,17 +75,17 @@ namespace PlantTycoonHelper
                                     .ForEach(x => Console.WriteLine($"{x.FlowerA.ToString()} + {x.FlowerB.ToString()}"));
                                 break;
 
-                            case "LP":  //List plants
-                                var allPlantFormulas = plantCalculator.ReportAllOrdered();
-                                var allPlantFormulasWithResult = allPlantFormulas.Where(x => x.Result != null || x.InProgress).ToList();
-                                var allPlantFormulasWithEmptyResult = allPlantFormulas.Where(x => x.Result == null && x.InProgress == false).ToList();
+                            case "LP":  //List stems
+                                var allStemFormulas = stemCalculator.ReportAllOrdered();
+                                var allStemFormulasWithResult = allStemFormulas.Where(x => x.Result != null || x.InProgress).ToList();
+                                var allStemFormulasWithEmptyResult = allStemFormulas.Where(x => x.Result == null && x.InProgress == false).ToList();
                                 Console.WriteLine("\nWith result: -------");
-                                allPlantFormulasWithResult
+                                allStemFormulasWithResult
                                     .ForEach(x => Console.WriteLine(
-                                        $"{x.PlantA.ToString()} + {x.PlantB.ToString()} = {x.Result?.ToString()}{ComposeInProgressString(x.InProgress)}"));
+                                        $"{x.StemA.ToString()} + {x.StemB.ToString()} = {x.Result?.ToString()}{ComposeInProgressString(x.InProgress)}"));
                                 Console.WriteLine("\nWith no result: -------");
-                                allPlantFormulasWithEmptyResult
-                                    .ForEach(x => Console.WriteLine($"{x.PlantA.ToString()} + {x.PlantB.ToString()}"));
+                                allStemFormulasWithEmptyResult
+                                    .ForEach(x => Console.WriteLine($"{x.StemA.ToString()} + {x.StemB.ToString()}"));
                                 break;
 
                             case "RF":  //Reverse list flowers
@@ -98,26 +98,26 @@ namespace PlantTycoonHelper
                                     .ForEach(x => Console.WriteLine($"{x.ToString()}"));
                                 break;
 
-                            case "RP":  //Reverse list plants
-                                var resultPlantFormulas = plantCalculator.ReportAllOrderedByResult();
-                                resultPlantFormulas 
-                                    .ForEach(x => Console.WriteLine($"{x.Result.ToString()} <- {x.PlantA.ToString()} + {x.PlantB.ToString()}"));
+                            case "RP":  //Reverse list stems
+                                var resultStemFormulas = stemCalculator.ReportAllOrderedByResult();
+                                resultStemFormulas 
+                                    .ForEach(x => Console.WriteLine($"{x.Result.ToString()} <- {x.StemA.ToString()} + {x.StemB.ToString()}"));
                                 Console.WriteLine("\nElements with no formula:");
-                                var plantTypesWithNoFormula = plantCalculator.ReportPlantTypesWithNoFormula();
-                                plantTypesWithNoFormula
+                                var stemTypesWithNoFormula = stemCalculator.ReportStemTypesWithNoFormula();
+                                stemTypesWithNoFormula
                                     .ForEach(x => Console.WriteLine($"{x.ToString()}"));
                                 break;
 
                             case "SS":  //Seed Storage
                                 var seeds = seedCalculator.ReportSeeds();
                                 seeds
-                                    .ForEach(x => Console.WriteLine($"{x.Flower.ToString()} {x.Plant.ToString()}"));
+                                    .ForEach(x => Console.WriteLine($"{x.Flower.ToString()} {x.Stem.ToString()}"));
                                 break;
 
                             case "RS":  //Reverse seed Storage
                                 var seedsReverse = seedCalculator.ReportSeedsReverse();
                                 seedsReverse
-                                    .ForEach(x => Console.WriteLine($"{x.Flower.ToString()} {x.Plant.ToString()}"));
+                                    .ForEach(x => Console.WriteLine($"{x.Flower.ToString()} {x.Stem.ToString()}"));
                                 break;
 
                             case "UPDATE":  //Update formulas
@@ -135,9 +135,9 @@ namespace PlantTycoonHelper
                         flowerFormulas.ForEach(x => Console.WriteLine($"{x.FlowerA.ToString()} + {x.FlowerB.ToString()} = {x.Result?.ToString()}"));
                         break;
 
-                    case PlantType plantType:
-                        var plantFormulas = plantCalculator.ReportForPlantType(plantType);
-                        plantFormulas.ForEach(x => Console.WriteLine($"{x.PlantA.ToString()} + {x.PlantB.ToString()} = {x.Result?.ToString()}"));
+                    case StemType stemType:
+                        var stemFormulas = stemCalculator.ReportForStemType(stemType);
+                        stemFormulas.ForEach(x => Console.WriteLine($"{x.StemA.ToString()} + {x.StemB.ToString()} = {x.Result?.ToString()}"));
                         break;
 
                     default:
@@ -152,9 +152,9 @@ namespace PlantTycoonHelper
             return (inProgress) ? "(P)" : string.Empty;
         }
 
-        private static object ParseFlowerOrPlantInput(string input)
+        private static object ParseFlowerOrStemInput(string input)
         {
-            object parsedInput = input.ToFlowerType() as object ?? input.ToPlantType() as object ?? input.ToUpper();
+            object parsedInput = input.ToFlowerType() as object ?? input.ToStemType() as object ?? input.ToUpper();
             return parsedInput;
         }
 
@@ -167,7 +167,7 @@ namespace PlantTycoonHelper
             }
 
             flowerSeeder.Reseed();
-            plantSeeder.Reseed();
+            stemSeeder.Reseed();
             seedSeeder.Reseed();
         }
 
@@ -178,11 +178,11 @@ namespace PlantTycoonHelper
             flowerTuples.ForEach(x => Console.WriteLine($"{x.FlowerA.ToString()} + {x.FlowerB.ToString()}"));
         }
 
-        static void ListPlantCombinations()
+        static void ListStemCombinations()
         {
-            var calculator = new PlantCalculator();
-            var plantTuples = calculator.CalculateAllOrderedPlantFormulasWithEmptyResult();
-            plantTuples.ForEach(x => Console.WriteLine($"{x.PlantA.ToString()} + {x.PlantB.ToString()}"));
+            var calculator = new StemCalculator();
+            var stemTuples = calculator.CalculateAllOrderedStemFormulasWithEmptyResult();
+            stemTuples.ForEach(x => Console.WriteLine($"{x.StemA.ToString()} + {x.StemB.ToString()}"));
         }
     }
 }

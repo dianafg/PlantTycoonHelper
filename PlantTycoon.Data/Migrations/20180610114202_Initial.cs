@@ -26,19 +26,19 @@ namespace PlantTycoon.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "PlantFormulas",
+                name: "StemFormulas",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     InProgress = table.Column<bool>(nullable: false),
-                    PlantA = table.Column<int>(nullable: false),
-                    PlantB = table.Column<int>(nullable: false),
+                    StemA = table.Column<int>(nullable: false),
+                    StemB = table.Column<int>(nullable: false),
                     Result = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PlantFormulas", x => x.Id);
+                    table.PrimaryKey("PK_StemFormulas", x => x.Id);
                 });
         }
 
@@ -48,7 +48,7 @@ namespace PlantTycoon.Data.Migrations
                 name: "FlowerFormulas");
 
             migrationBuilder.DropTable(
-                name: "PlantFormulas");
+                name: "StemFormulas");
         }
     }
 }

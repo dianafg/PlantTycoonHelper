@@ -2,7 +2,7 @@
 
 namespace PlantTycoon.Domain
 {
-    public enum  PlantType
+    public enum  StemType
     {
         Ananas = 1,
         Astera,
@@ -29,13 +29,13 @@ namespace PlantTycoon.Domain
         Weeper
     }
 
-    public static class PlantTypeExtensions
+    public static class StemTypeExtensions
     {
-        public static PlantType? ToPlantType(this string plantTypeName)
+        public static StemType? ToStemType(this string stemTypeName)
         {
             try
             {
-                return (PlantType)Enum.Parse(typeof(PlantType), plantTypeName, ignoreCase: true);
+                return (StemType)Enum.Parse(typeof(StemType), stemTypeName, ignoreCase: true);
             }
             catch (Exception)
             {

@@ -38,22 +38,22 @@ namespace PlantTycoon.Data.Migrations
                     b.ToTable("FlowerFormulas");
                 });
 
-            modelBuilder.Entity("PlantTycoon.Domain.PlantFormula", b =>
+            modelBuilder.Entity("PlantTycoon.Domain.StemFormula", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<bool>("InProgress");
 
-                    b.Property<int>("PlantA");
+                    b.Property<int>("StemA");
 
-                    b.Property<int>("PlantB");
+                    b.Property<int>("StemB");
 
                     b.Property<int?>("Result");
 
                     b.HasKey("Id");
 
-                    b.ToTable("PlantFormulas");
+                    b.ToTable("StemFormulas");
                 });
 
             modelBuilder.Entity("PlantTycoon.Domain.Seed", b =>
@@ -63,7 +63,7 @@ namespace PlantTycoon.Data.Migrations
 
                     b.Property<int>("Flower");
 
-                    b.Property<int>("Plant");
+                    b.Property<int>("Stem");
 
                     b.HasKey("Id");
 

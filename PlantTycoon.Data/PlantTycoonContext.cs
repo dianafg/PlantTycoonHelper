@@ -7,7 +7,7 @@ namespace PlantTycoon.Data
     {
         public DbSet<FlowerFormula> FlowerFormulas { get; set; }
 
-        public DbSet<PlantFormula> PlantFormulas { get; set; }
+        public DbSet<StemFormula> StemFormulas { get; set; }
 
         public DbSet<Seed> Seeds { get; set; }
 
