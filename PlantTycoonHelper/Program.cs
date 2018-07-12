@@ -1,6 +1,8 @@
 ﻿using PlantTycoon.Data;
 using PlantTycoon.Domain;
 using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 //To publish as exe instead of dll:
@@ -32,9 +34,57 @@ namespace PlantTycoonHelper
             //CalculateFlowers();
             //CalculateStems();
 
-            ReseedFormulas();
+            //ReseedFormulas();
 
-            LoopForFlowerOrStemType();
+            //LoopForFlowerOrStemType();
+
+            ReportUntestedPlantFormulasForCurrentPlants();
+        }
+
+        public static List<Plant> CurrentPlants = new List<Plant>
+        {
+            new Plant(FlowerType.Fourpetal, StemType.Gladiatus),
+            new Plant(FlowerType.Bluestar, StemType.PearCactus),
+            new Plant(FlowerType.Daisy, StemType.Grass),
+            new Plant(FlowerType.Bluestar, StemType.Ridgeball),
+            new Plant(FlowerType.Daisy, StemType.TigerFern),
+
+            new Plant(FlowerType.Mystic, StemType.RareOak),
+            new Plant(FlowerType.Bluestar, StemType.Reptans),
+            new Plant(FlowerType.Bluestar, StemType.Maple),
+            new Plant(FlowerType.Bluestar, StemType.Ridgeball),
+            new Plant(FlowerType.Painted, StemType.Ridgeball),
+
+            new Plant(FlowerType.Bluestar, StemType.Lemonbush),
+            new Plant(FlowerType.Mela, StemType.Maple),
+            new Plant(FlowerType.Jalapa, StemType.BallCactus),
+            new Plant(FlowerType.Venomous, StemType.Fern),
+            new Plant(FlowerType.Viola, StemType.RareOak)
+        };
+
+        public static void ReportUntestedPlantFormulasForCurrentPlants()
+        {
+            var plantCalculator = new PlantCalculator();
+            var untestedFormulas = plantCalculator.GetUntestedPlantFormulasForCurrentPlants(CurrentPlants);
+
+            var outFileFull = File.CreateText("formulasFull.txt");
+            untestedFormulas.ToList()
+                .ForEach(x => outFileFull.WriteLine(
+                    $"{x.PlantA.Flower.ToString()} {x.PlantA.Stem.ToString()} " +
+                    $"+ {x.PlantB.Flower.ToString()} {x.PlantB.Stem.ToString()} " +
+                    $"= {x.Result.Flower.ToString()} {x.Result.Stem.ToString()}"));
+            outFileFull.Flush();
+            outFileFull.Close();
+
+            var outFile = File.CreateText("formulas.txt");
+            var filteredFormulas = plantCalculator.FilterPlantFormulasOnlyBetweenCurrentPlants(CurrentPlants, untestedFormulas);
+            filteredFormulas.ToList()
+                .ForEach(x => outFile.WriteLine(
+                    $"{x.PlantA.Flower.ToString()} {x.PlantA.Stem.ToString()} " +
+                    $"+ {x.PlantB.Flower.ToString()} {x.PlantB.Stem.ToString()} " +
+                    $"= {x.Result.Flower.ToString()} {x.Result.Stem.ToString()}"));
+            outFile.Flush();
+            outFile.Close();
         }
 
         static void LoopForFlowerOrStemType()
