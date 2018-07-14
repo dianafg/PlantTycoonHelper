@@ -12,9 +12,10 @@ using System;
 namespace PlantTycoon.Data.Migrations
 {
     [DbContext(typeof(PlantTycoonContext))]
-    partial class PlantTycoonContextModelSnapshot : ModelSnapshot
+    [Migration("20180714114039_SeedPosition")]
+    partial class SeedPosition
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

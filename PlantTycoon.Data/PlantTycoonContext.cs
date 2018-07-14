@@ -26,6 +26,15 @@ namespace PlantTycoon.Data
 
             modelBuilder.Entity<Seed>()
                 .Ignore(x => x.Position);
+
+            modelBuilder.Entity<Seed>()
+                .Property<string>("PositionSection");
+
+            modelBuilder.Entity<Seed>()
+                .Property<int>("PositionRow");
+
+            modelBuilder.Entity<Seed>()
+                .Property<int>("PositionColumn");
         }
     }
 }

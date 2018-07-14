@@ -31,35 +31,34 @@ namespace PlantTycoonHelper
             seedSeeder = new SeedStorageSeeder(seedCalculator);
             catalog = new Catalog();
 
-            //CalculateFlowers();
-            //CalculateStems();
-
-            //ReseedFormulas();
+            ReseedFormulas();
 
             //LoopForFlowerOrStemType();
 
+            //catalog.Reseed();
             ReportUntestedPlantFormulasForCurrentPlants();
+            ReportUntestedSeedsInStorage();
         }
 
         public static List<Plant> CurrentPlants = new List<Plant>
         {
-            new Plant(FlowerType.Fourpetal, StemType.Gladiatus),
-            new Plant(FlowerType.Bluestar, StemType.PearCactus),
-            new Plant(FlowerType.Daisy, StemType.Grass),
-            new Plant(FlowerType.Bluestar, StemType.Ridgeball),
-            new Plant(FlowerType.Daisy, StemType.TigerFern),
+            new Plant(FlowerType.Fragrant, StemType.Glaber),
+            new Plant(FlowerType.Nox, StemType.Glaber),
+            new Plant(FlowerType.Viola, StemType.PipeCactus),
+            new Plant(FlowerType.Daisy, StemType.Weeper),
+            new Plant(FlowerType.Daisy, StemType.Weeper),
 
-            new Plant(FlowerType.Mystic, StemType.RareOak),
-            new Plant(FlowerType.Bluestar, StemType.Reptans),
+            new Plant(FlowerType.Jalapa, StemType.Maple),
+            new Plant(FlowerType.Nox, StemType.Weeper),
             new Plant(FlowerType.Bluestar, StemType.Maple),
-            new Plant(FlowerType.Bluestar, StemType.Ridgeball),
-            new Plant(FlowerType.Painted, StemType.Ridgeball),
+            new Plant(FlowerType.Viola, StemType.Ananas),
+            new Plant(FlowerType.Mystic, StemType.Maranta),
 
             new Plant(FlowerType.Bluestar, StemType.Lemonbush),
-            new Plant(FlowerType.Mela, StemType.Maple),
+            new Plant(FlowerType.Painted, StemType.Ridgeball),
             new Plant(FlowerType.Jalapa, StemType.BallCactus),
-            new Plant(FlowerType.Venomous, StemType.Fern),
-            new Plant(FlowerType.Viola, StemType.RareOak)
+            new Plant(FlowerType.Rosaceae, StemType.Pitcher),
+            new Plant(FlowerType.Painted, StemType.Ridgeball)
         };
 
         public static void ReportUntestedPlantFormulasForCurrentPlants()
@@ -83,6 +82,20 @@ namespace PlantTycoonHelper
                     $"{x.PlantA.Flower.ToString()} {x.PlantA.Stem.ToString()} " +
                     $"+ {x.PlantB.Flower.ToString()} {x.PlantB.Stem.ToString()} " +
                     $"= {x.Result.Flower.ToString()} {x.Result.Stem.ToString()}"));
+            outFile.Flush();
+            outFile.Close();
+        }
+
+        public static void ReportUntestedSeedsInStorage()
+        {
+            var plantCalculator = new PlantCalculator();
+
+            var outFile = File.CreateText("untested_seeds.txt");
+            var untestedSeeds = plantCalculator.GetSeedsOfUntestedPlants();
+            untestedSeeds.ToList()
+                .ForEach(x => outFile.WriteLine(
+                    $"{x.Flower.ToString()} {x.Stem.ToString()} " +
+                    $"{x.Position?.ToString()}"));
             outFile.Flush();
             outFile.Close();
         }

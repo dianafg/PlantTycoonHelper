@@ -1,5 +1,6 @@
 ﻿using PlantTycoon.Data;
 using PlantTycoon.Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -10,10 +11,22 @@ namespace PlantTycoonHelper
         protected PlantTycoonContext dbContext { get; set; }
         protected readonly PlantComparer plantComparer = new PlantComparer();
         protected readonly FormulaComparer formulaComparer = new FormulaComparer();
+        protected readonly SeedComparer seedComparer = new SeedComparer();
 
         public IEnumerable<PlantFormula> FilterPlantFormulasOnlyBetweenCurrentPlants(IEnumerable<Plant> currentPlants, IEnumerable<PlantFormula> allFormulas)
         {
             return allFormulas.Where(x => currentPlants.Contains(x.PlantA, plantComparer) && currentPlants.Contains(x.PlantB, plantComparer));
+        }
+
+        public IEnumerable<Seed> GetSeedsOfUntestedPlants()
+        {
+            using (dbContext = new PlantTycoonContext())
+            {
+                var seedsOfTestedPlants = dbContext.Plants.Select(x => new Seed(Tuple.Create('A', 1, 1), x.Flower, x.Stem));
+                var seedsInStorage = dbContext.Seeds.ToList();
+                var seedsOfUntestedPlants = seedsInStorage.Except(seedsOfTestedPlants, seedComparer);
+                return seedsOfUntestedPlants.ToList();
+            }
         }
 
         public IEnumerable<PlantFormula> GetUntestedPlantFormulasForCurrentPlants(IEnumerable<Plant> currentPlants)
@@ -63,25 +76,19 @@ namespace PlantTycoonHelper
 
             return formulas.AsEnumerable();
         }
+    }
 
-        //protected IEnumerable<PlantFormula> GetPlantFormulasContainingPlant(Plant plant)
-        //{
-        //    var stemCalculator = new StemCalculator();
-        //    var flowerCalculator = new FlowerCalculator();
+    public class SeedComparer : IEqualityComparer<Seed>
+    {
+        public bool Equals(Seed x, Seed y)
+        {
+            return (x.Flower == y.Flower && x.Stem == y.Stem);
+        }
 
-        //    var allFlowerFormulasContainingPlant = dbContext.FlowerFormulas.Where(x => x.FlowerA == plant.Flower || x.FlowerB == plant.Flower).ToList();
-        //    var allStemFormulasContainingPlant = dbContext.StemFormulas.Where(x => x.StemA == plant.Stem || x.StemB == plant.Stem).ToList();
-
-        //    var formulas = allFlowerFormulasContainingPlant
-        //        .SelectMany(x => allStemFormulasContainingPlant
-        //            .Select(y => new PlantFormula {
-        //                PlantA = new Plant(x.FlowerA, y.StemA, false),
-        //                PlantB = new Plant(x.FlowerB, y.StemB, false),
-        //                Result = new Plant(x.Result.Value, y.Result.Value, false)
-        //            }));
-
-        //    return formulas.AsEnumerable();
-        //}
+        public int GetHashCode(Seed obj)
+        {
+            return $"{obj.Flower.ToString()}-{obj.Stem.ToString()}".GetHashCode();
+        }
     }
 
     public class PlantComparer : IEqualityComparer<Plant>
@@ -110,6 +117,7 @@ namespace PlantTycoonHelper
             return $"{obj.PlantA.Flower.ToString()}-{obj.PlantB.Flower.ToString()}-{obj.PlantA.Stem.ToString()}-{obj.PlantB.Stem.ToString()}".GetHashCode();
         }
     }
+
     public class PlantFormula
     {
         public Plant PlantA { get; set; }
@@ -158,3 +166,23 @@ namespace PlantTycoonHelper
 //var allFormulaCombinations = allFormulasForFlower.
 //    SelectMany(flower => allFormulasForStem.Select(stem => new Plant(flower.Value, stem.Value, false)));
 //    //aList.SelectMany(a => bList.Select(b => a + b))
+
+
+//protected IEnumerable<PlantFormula> GetPlantFormulasContainingPlant(Plant plant)
+//{
+//    var stemCalculator = new StemCalculator();
+//    var flowerCalculator = new FlowerCalculator();
+
+//    var allFlowerFormulasContainingPlant = dbContext.FlowerFormulas.Where(x => x.FlowerA == plant.Flower || x.FlowerB == plant.Flower).ToList();
+//    var allStemFormulasContainingPlant = dbContext.StemFormulas.Where(x => x.StemA == plant.Stem || x.StemB == plant.Stem).ToList();
+
+//    var formulas = allFlowerFormulasContainingPlant
+//        .SelectMany(x => allStemFormulasContainingPlant
+//            .Select(y => new PlantFormula {
+//                PlantA = new Plant(x.FlowerA, y.StemA, false),
+//                PlantB = new Plant(x.FlowerB, y.StemB, false),
+//                Result = new Plant(x.Result.Value, y.Result.Value, false)
+//            }));
+
+//    return formulas.AsEnumerable();
+//}

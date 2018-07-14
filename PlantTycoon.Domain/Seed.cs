@@ -10,7 +10,24 @@ namespace PlantTycoon.Domain
         private static int tableRows = 4;
 
         public int Id { get; protected set; }
-        public Tuple<char, int, int> Position { get; set; }
+
+        protected string PositionSection { get; set; }
+        protected int PositionRow { get; set; }
+        protected int PositionColumn { get; set; }
+        public Tuple<char, int, int> Position
+        {
+            get
+            {
+                return Tuple.Create<char, int, int>(PositionSection[0], PositionRow, PositionColumn);
+            }
+            set
+            {
+                PositionSection = value.Item1.ToString();
+                PositionRow = value.Item2;
+                PositionColumn = value.Item3;
+            }
+        }
+
         public FlowerType Flower { get; protected set; }
         public StemType Stem { get; protected set; }
 
@@ -44,7 +61,7 @@ namespace PlantTycoon.Domain
         {
             if (positionRow < 1 || positionRow > tableRows)
             {
-                throw new ArgumentException($"Wrong row number {positionRow}: must be between 0 and {tableRows - 1}");
+                throw new ArgumentException($"Wrong row number {positionRow}: must be between 1 and {tableRows - 1}");
             }
         }
 
@@ -52,7 +69,7 @@ namespace PlantTycoon.Domain
         {
             if (positionColumn < 1 || positionColumn > tableColumns)
             {
-                throw new ArgumentException($"Wrong column number {positionColumn}: must be between 0 and {tableColumns - 1}");
+                throw new ArgumentException($"Wrong column number {positionColumn}: must be between 1 and {tableColumns - 1}");
             }
         }
     }

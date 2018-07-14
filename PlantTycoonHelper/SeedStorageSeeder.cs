@@ -22,8 +22,8 @@ namespace PlantTycoonHelper
             calculator.SetSeed(Tuple.Create('A', 1, 4), FlowerType.Arthurium, StemType.Bamboo);
             calculator.SetSeed(Tuple.Create('A', 1, 5), FlowerType.Jalapa, StemType.Fern);
             calculator.SetSeed(Tuple.Create('A', 1, 6), FlowerType.Bluestar, StemType.Lemonbush);
-            calculator.SetSeed(Tuple.Create('A', 1, 7), FlowerType.Rosaceae, StemType.Ananas);
-            calculator.SetSeed(Tuple.Create('A', 1, 8), FlowerType.Jalapa, StemType.Ananas);
+            calculator.SetSeed(Tuple.Create('A', 1, 7), FlowerType.Fragrant, StemType.Multiflora);
+            calculator.SetSeed(Tuple.Create('A', 1, 8), FlowerType.Fragrant, StemType.Multiflora);
             calculator.SetSeed(Tuple.Create('A', 1, 9), FlowerType.Citrus, StemType.RareOak);
             calculator.SetSeed(Tuple.Create('A', 1, 10), FlowerType.Bluestar, StemType.Maranta);
 
@@ -55,7 +55,7 @@ namespace PlantTycoonHelper
             calculator.SetSeed(Tuple.Create('A', 4, 4), FlowerType.Fabled, StemType.Bamboo);
             calculator.SetSeed(Tuple.Create('A', 4, 5), FlowerType.Aureus, StemType.Bamboo);
             calculator.SetSeed(Tuple.Create('A', 4, 6), FlowerType.Viola, StemType.Fern);
-            calculator.SetSeed(Tuple.Create('A', 4, 7), 0, 0);
+            calculator.SetSeed(Tuple.Create('A', 4, 7), FlowerType.Rosaceae, StemType.Multiflora);
             calculator.SetSeed(Tuple.Create('A', 4, 8), FlowerType.Venus, StemType.RareOak);
             calculator.SetSeed(Tuple.Create('A', 4, 9), FlowerType.Rosaceae, StemType.Lemonbush);
             calculator.SetSeed(Tuple.Create('A', 4, 10), FlowerType.Blazing, StemType.Maranta);
@@ -80,7 +80,7 @@ namespace PlantTycoonHelper
             calculator.SetSeed(Tuple.Create('B', 2, 5), FlowerType.Fragrant, StemType.Fanleaf);
             calculator.SetSeed(Tuple.Create('B', 2, 6), FlowerType.Mela, StemType.PearCactus);
             calculator.SetSeed(Tuple.Create('B', 2, 7), FlowerType.Mela, StemType.BallCactus);
-            calculator.SetSeed(Tuple.Create('B', 2, 8), FlowerType.Fragrant, StemType.Bamboo);
+            calculator.SetSeed(Tuple.Create('B', 2, 8), FlowerType.Fragrant, StemType.Orchid);
             calculator.SetSeed(Tuple.Create('B', 2, 9), FlowerType.Arthurium, StemType.PipeCactus);
             calculator.SetSeed(Tuple.Create('B', 2, 10), FlowerType.Viola, StemType.Astera);
 
@@ -145,8 +145,8 @@ namespace PlantTycoonHelper
             calculator.SetSeed(Tuple.Create('C', 4, 2), FlowerType.Arthurium, StemType.BallCactus);
             calculator.SetSeed(Tuple.Create('C', 4, 3), FlowerType.Daisy, StemType.PipeCactus);
             calculator.SetSeed(Tuple.Create('C', 4, 4), FlowerType.Mystic, StemType.Lemonbush);
-            calculator.SetSeed(Tuple.Create('C', 4, 5), FlowerType.Jalapa, StemType.Weeper);
-            calculator.SetSeed(Tuple.Create('C', 4, 6), FlowerType.Spotted, StemType.Maranta);
+            calculator.SetSeed(Tuple.Create('C', 4, 5), FlowerType.Fourpetal, StemType.Weeper);
+            calculator.SetSeed(Tuple.Create('C', 4, 6), FlowerType.Painted, StemType.Maple);
             calculator.SetSeed(Tuple.Create('C', 4, 7), FlowerType.Jalapa, StemType.Weeper);
             calculator.SetSeed(Tuple.Create('C', 4, 8), FlowerType.Nox, StemType.Bamboo);
             calculator.SetSeed(Tuple.Create('C', 4, 9), FlowerType.Citrus, StemType.Multiflora);

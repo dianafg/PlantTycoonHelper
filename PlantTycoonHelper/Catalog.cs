@@ -7,7 +7,7 @@ namespace PlantTycoonHelper
 {
     public class Catalog
     {
-        public HashSet<Plant> Plants { get; set; }
+        public IEnumerable<Plant> Plants { get; set; }
 
         public Catalog()
         {
@@ -29,11 +29,6 @@ namespace PlantTycoonHelper
             dbContext.Plants.RemoveRange(dbContext.Plants.Where(x => 1 == 1));
         }
 
-        protected void Add(Plant plant)
-        {
-            Plants.Add(plant);
-        }
-
         protected void Initialize()
         {
             var builder = new CatalogBuilder();
@@ -45,15 +40,15 @@ namespace PlantTycoonHelper
     {
         private const string filePath = "Catalog.txt";
 
-        public HashSet<Plant> BuildFromFile()
+        public IEnumerable<Plant> BuildFromFile()
         {
             var catalogFileReader = new TextFileReader(filePath);
             var plantTextLines = catalogFileReader.ReadAllDistinctWithoutEmptyLines();
 
             var plants = new HashSet<Plant>();
             plantTextLines.ToList().ForEach(plantTextLine => plants.Add(CreatePlantFromTextLine(plantTextLine)));
-
-            return plants;
+            var orderedPlants = plants.OrderBy(x => x.Flower).ThenBy(x => x.Stem);
+            return orderedPlants;
         }
 
         protected Plant CreatePlantFromTextLine(string plantTextLine)
@@ -73,11 +68,11 @@ namespace PlantTycoonHelper
             this.filePath = filePath;
         }
 
-        public HashSet<string> ReadAllDistinctWithoutEmptyLines()
+        public IEnumerable<string> ReadAllDistinctWithoutEmptyLines()
         {
             HashSet<string> lines = System.IO.File.ReadAllLines(this.filePath).ToHashSet();
             lines.Remove(string.Empty);
-            return lines;
+            return lines.AsEnumerable();
         }
     }
 }
