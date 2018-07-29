@@ -243,7 +243,7 @@ namespace PlantTycoonHelper
             flowerCalculator.SetFlowerFormula(FlowerType.Nox, FlowerType.Spotted, FlowerType.Daisy);
             flowerCalculator.SetFlowerFormula(FlowerType.Nox, FlowerType.Tahitian, FlowerType.Blazing);
             flowerCalculator.SetFlowerFormula(FlowerType.Nox, FlowerType.Tilia, FlowerType.Aureus);
-            flowerCalculator.SetFlowerFormula(FlowerType.Nox, FlowerType.Venomous, FlowerType.Arthurium);
+            flowerCalculator.SetFlowerFormula(FlowerType.Nox, FlowerType.Venomous, FlowerType.Fabled);
             flowerCalculator.SetFlowerFormula(FlowerType.Nox, FlowerType.Venus, FlowerType.Blazing);
             flowerCalculator.SetFlowerFormula(FlowerType.Nox, FlowerType.Viola, FlowerType.Mystic);
 

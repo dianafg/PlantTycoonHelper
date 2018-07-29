@@ -31,40 +31,83 @@ namespace PlantTycoonHelper
             seedSeeder = new SeedStorageSeeder(seedCalculator);
             catalog = new Catalog();
 
-            ReseedFormulas();
+            //ReseedFormulas();
+            catalog.Reseed();
+            //seedSeeder.Reseed();
 
             //LoopForFlowerOrStemType();
 
-            //catalog.Reseed();
             ReportUntestedPlantFormulasForCurrentPlants();
             ReportUntestedSeedsInStorage();
+            ReportUntestedPlants();
         }
 
         public static List<Plant> CurrentPlants = new List<Plant>
         {
-            new Plant(FlowerType.Fragrant, StemType.Glaber),
-            new Plant(FlowerType.Nox, StemType.Glaber),
-            new Plant(FlowerType.Viola, StemType.PipeCactus),
-            new Plant(FlowerType.Daisy, StemType.Weeper),
-            new Plant(FlowerType.Daisy, StemType.Weeper),
+            new Plant(FlowerType.Venomous, StemType.Multiflora),
+            new Plant(FlowerType.Spotted, StemType.Reptans),
+            new Plant(FlowerType.Fabled, StemType.Ridgeball),
+            new Plant(FlowerType.Aureus, StemType.Multiflora),
+            new Plant(FlowerType.Arthurium, StemType.Pitcher),
 
-            new Plant(FlowerType.Jalapa, StemType.Maple),
-            new Plant(FlowerType.Nox, StemType.Weeper),
-            new Plant(FlowerType.Bluestar, StemType.Maple),
-            new Plant(FlowerType.Viola, StemType.Ananas),
-            new Plant(FlowerType.Mystic, StemType.Maranta),
+            new Plant(FlowerType.Citrus, StemType.Weeper),
+            new Plant(FlowerType.Blazing, StemType.Multiflora),
+            new Plant(FlowerType.Mela, StemType.Ridgeball),
+            new Plant(FlowerType.Tilia, StemType.Ananas),
+            new Plant(FlowerType.Fourpetal, StemType.Multiflora),
 
+            new Plant(FlowerType.Lilia, StemType.Orchid),
+            new Plant(FlowerType.Mela, StemType.Weeper),
+            new Plant(FlowerType.Tilia, StemType.Glaber),
+            new Plant(FlowerType.Blazing, StemType.Ridgeball),
+            new Plant(FlowerType.Baccatus, StemType.Gladiatus),
+
+
+            new Plant(FlowerType.Blazing, StemType.Orchid),
+            new Plant(FlowerType.Venus, StemType.Grass),
+            new Plant(FlowerType.Painted, StemType.RareOak),
+            new Plant(FlowerType.Citrus, StemType.Scandens),
+            new Plant(FlowerType.Venomous, StemType.Scandens),
+            new Plant(FlowerType.Tilia, StemType.Maranta),
+
+            new Plant(FlowerType.Lilia, StemType.Glaber),
+            new Plant(FlowerType.Baccatus, StemType.Astera),
+            new Plant(FlowerType.Arthurium, StemType.Weeper),
+            new Plant(FlowerType.Tilia, StemType.Fern),
+            new Plant(FlowerType.Venomous, StemType.Ridgeball),
+            new Plant(FlowerType.Mela, StemType.Multiflora),
+            new Plant(FlowerType.Tilia, StemType.Gladiatus),
+            new Plant(FlowerType.Fourpetal, StemType.Ridgeball),
+            new Plant(FlowerType.Aureus, StemType.Ridgeball),
+            new Plant(FlowerType.Citrus, StemType.Multiflora),
+            new Plant(FlowerType.Citrus, StemType.Ridgeball),
+
+
+            //new Plant(FlowerType.Citrus, StemType.Ridgeball),
+            //new Plant(FlowerType.Arthurium, StemType.Multiflora),
+            //new Plant(FlowerType.Arthurium, StemType.Ridgeball),
+            //new Plant(FlowerType.Lilia, StemType.Weeper),
+
+            new Plant(FlowerType.Tahitian, StemType.PipeCactus),
+            new Plant(FlowerType.Fourpetal, StemType.TigerFern),
+            new Plant(FlowerType.Rosaceae, StemType.Bamboo),
+            new Plant(FlowerType.Arthurium, StemType.Bamboo),
+            new Plant(FlowerType.Jalapa, StemType.Fern),
             new Plant(FlowerType.Bluestar, StemType.Lemonbush),
-            new Plant(FlowerType.Painted, StemType.Ridgeball),
-            new Plant(FlowerType.Jalapa, StemType.BallCactus),
-            new Plant(FlowerType.Rosaceae, StemType.Pitcher),
-            new Plant(FlowerType.Painted, StemType.Ridgeball)
-        };
+            new Plant(FlowerType.Viola, StemType.BallCactus),
+            new Plant(FlowerType.Fragrant, StemType.Multiflora),
+            new Plant(FlowerType.Citrus, StemType.RareOak),
+            new Plant(FlowerType.Bluestar, StemType.Maranta),
+    };
 
         public static void ReportUntestedPlantFormulasForCurrentPlants()
         {
             var plantCalculator = new PlantCalculator();
-            var untestedFormulas = plantCalculator.GetUntestedPlantFormulasForCurrentPlants(CurrentPlants);
+            var untestedFormulas = plantCalculator.GetUntestedPlantFormulasForCurrentPlants(CurrentPlants)
+                .OrderBy(x => x.PlantA.Flower)
+                .ThenBy(x => x.PlantA.Stem)
+                .ThenBy(x => x.PlantB.Flower)
+                .ThenBy(x => x.PlantB.Stem);
 
             var outFileFull = File.CreateText("formulasFull.txt");
             untestedFormulas.ToList()
@@ -96,6 +139,39 @@ namespace PlantTycoonHelper
                 .ForEach(x => outFile.WriteLine(
                     $"{x.Flower.ToString()} {x.Stem.ToString()} " +
                     $"{x.Position?.ToString()}"));
+            outFile.Flush();
+            outFile.Close();
+        }
+
+        public static void ReportUntestedPlants()
+        {
+            var plantCalculator = new PlantCalculator();
+
+            var outFile = File.CreateText("untested_plants.txt");
+            var untestedPlants = plantCalculator.GetUntestedPlants();
+
+            outFile.WriteLine($"Untested plants count: {untestedPlants.Count()}\n");
+
+            var lastFlower = (FlowerType)1;
+            untestedPlants.ToList()
+                .ForEach(x =>
+                {
+                    if (x.Flower != lastFlower) outFile.WriteLine($"----------------");
+                    lastFlower = x.Flower;
+                    outFile.WriteLine($"{x.Flower.ToString()} {x.Stem.ToString()}");
+                });
+
+            outFile.WriteLine($"\n----------------------------------------------\n");
+
+            var lastStem = (StemType)1;
+            untestedPlants.OrderBy(x => x.Stem).ThenBy(x => x.Flower).ToList()
+                .ForEach(x => 
+                {
+                    if (x.Stem != lastStem) outFile.WriteLine($"----------------");
+                    lastStem = x.Stem;
+                    outFile.WriteLine($"{x.Flower.ToString()} {x.Stem.ToString()}");
+                });
+
             outFile.Flush();
             outFile.Close();
         }

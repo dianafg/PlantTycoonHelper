@@ -276,7 +276,7 @@ namespace PlantTycoonHelper
             stemCalculator.SetStemFormula(StemType.RareOak, StemType.Scandens, StemType.Ananas);
             stemCalculator.SetStemFormula(StemType.RareOak, StemType.Weeper, StemType.Glaber);
 
-            stemCalculator.SetStemFormula(StemType.Reptans, StemType.Ridgeball, StemType.Ridgeball);
+            stemCalculator.SetStemFormula(StemType.Reptans, StemType.Ridgeball, StemType.Bamboo);
             stemCalculator.SetStemFormula(StemType.Reptans, StemType.Scandens, StemType.Scandens);
             stemCalculator.SetStemFormula(StemType.Reptans, StemType.TigerFern, StemType.Fanleaf);
             stemCalculator.SetStemFormula(StemType.Reptans, StemType.Weeper, StemType.Lemonbush);

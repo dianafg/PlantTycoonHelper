@@ -29,6 +29,28 @@ namespace PlantTycoonHelper
             }
         }
 
+        public IEnumerable<Plant> GetUntestedPlants()
+        {
+            using (dbContext = new PlantTycoonContext())
+            {
+                var allPlants = GetAllPossiblePlants();
+                var testedPlants = dbContext.Plants.ToList();
+                var untestedPlants = allPlants.Except(testedPlants, plantComparer);
+                return untestedPlants;
+            }
+        }
+
+        protected IEnumerable<Plant> GetAllPossiblePlants()
+        {
+            var plants = new List<Plant>();
+            var flowerNames = Enum.GetNames(typeof(FlowerType)).OrderBy(x => x).ToList();
+            var stemNames = Enum.GetNames(typeof(StemType)).OrderBy(x => x).ToList();
+            flowerNames.ForEach(flowerName => 
+                stemNames.ForEach(stemName => 
+                    plants.Add(new Plant(flowerName, stemName, false))));
+            return plants;
+        }
+
         public IEnumerable<PlantFormula> GetUntestedPlantFormulasForCurrentPlants(IEnumerable<Plant> currentPlants)
         {
             var formulas = new List<PlantFormula>();
@@ -108,8 +130,9 @@ namespace PlantTycoonHelper
     {
         public bool Equals(PlantFormula x, PlantFormula y)
         {
-            return (x.PlantA == y.PlantA && x.PlantB == y.PlantB)
-                || (x.PlantA == y.PlantB && x.PlantB == y.PlantA);
+            var plantComparer = new PlantComparer();
+            return (plantComparer.Equals(x.PlantA, y.PlantA) && plantComparer.Equals(x.PlantB, y.PlantB)
+                || (plantComparer.Equals(x.PlantA, y.PlantB) && plantComparer.Equals(x.PlantB, y.PlantA)));
         }
 
         public int GetHashCode(PlantFormula obj)
