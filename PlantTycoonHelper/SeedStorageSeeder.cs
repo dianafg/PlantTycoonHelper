@@ -127,7 +127,7 @@ namespace PlantTycoonHelper
             calculator.SetSeed(Tuple.Create('C', 2, 6), FlowerType.Viola, StemType.PearCactus);
             calculator.SetSeed(Tuple.Create('C', 2, 7), FlowerType.Venomous, StemType.Maple);
             calculator.SetSeed(Tuple.Create('C', 2, 8), FlowerType.Tahitian, StemType.Weeper);
-            calculator.SetSeed(Tuple.Create('C', 2, 9), FlowerType.Venus, StemType.Pitcher);
+            calculator.SetSeed(Tuple.Create('C', 2, 9), 0, 0);
             calculator.SetSeed(Tuple.Create('C', 2, 10), FlowerType.Venus, StemType.Pitcher);
 
             calculator.SetSeed(Tuple.Create('C', 3, 1), FlowerType.Aureus, StemType.Astera);

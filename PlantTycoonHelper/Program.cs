@@ -37,73 +37,18 @@ namespace PlantTycoonHelper
 
             //LoopForFlowerOrStemType();
 
-            ReportUntestedPlantFormulasForCurrentPlants();
+            var currentPlants = Guesser.CurrentPlants;
+            currentPlants.AddRange(Guesser.GetPlantsFromSeedStorage());
+
+            ReportUntestedPlantFormulasForCurrentPlants(currentPlants);
             ReportUntestedSeedsInStorage();
             ReportUntestedPlants();
         }
 
-        public static List<Plant> CurrentPlants = new List<Plant>
-        {
-            new Plant(FlowerType.Venomous, StemType.Multiflora),
-            new Plant(FlowerType.Spotted, StemType.Reptans),
-            new Plant(FlowerType.Fabled, StemType.Ridgeball),
-            new Plant(FlowerType.Aureus, StemType.Multiflora),
-            new Plant(FlowerType.Arthurium, StemType.Pitcher),
-
-            new Plant(FlowerType.Citrus, StemType.Weeper),
-            new Plant(FlowerType.Blazing, StemType.Multiflora),
-            new Plant(FlowerType.Mela, StemType.Ridgeball),
-            new Plant(FlowerType.Tilia, StemType.Ananas),
-            new Plant(FlowerType.Fourpetal, StemType.Multiflora),
-
-            new Plant(FlowerType.Lilia, StemType.Orchid),
-            new Plant(FlowerType.Mela, StemType.Weeper),
-            new Plant(FlowerType.Tilia, StemType.Glaber),
-            new Plant(FlowerType.Blazing, StemType.Ridgeball),
-            new Plant(FlowerType.Baccatus, StemType.Gladiatus),
-
-
-            new Plant(FlowerType.Blazing, StemType.Orchid),
-            new Plant(FlowerType.Venus, StemType.Grass),
-            new Plant(FlowerType.Painted, StemType.RareOak),
-            new Plant(FlowerType.Citrus, StemType.Scandens),
-            new Plant(FlowerType.Venomous, StemType.Scandens),
-            new Plant(FlowerType.Tilia, StemType.Maranta),
-
-            new Plant(FlowerType.Lilia, StemType.Glaber),
-            new Plant(FlowerType.Baccatus, StemType.Astera),
-            new Plant(FlowerType.Arthurium, StemType.Weeper),
-            new Plant(FlowerType.Tilia, StemType.Fern),
-            new Plant(FlowerType.Venomous, StemType.Ridgeball),
-            new Plant(FlowerType.Mela, StemType.Multiflora),
-            new Plant(FlowerType.Tilia, StemType.Gladiatus),
-            new Plant(FlowerType.Fourpetal, StemType.Ridgeball),
-            new Plant(FlowerType.Aureus, StemType.Ridgeball),
-            new Plant(FlowerType.Citrus, StemType.Multiflora),
-            new Plant(FlowerType.Citrus, StemType.Ridgeball),
-
-
-            //new Plant(FlowerType.Citrus, StemType.Ridgeball),
-            //new Plant(FlowerType.Arthurium, StemType.Multiflora),
-            //new Plant(FlowerType.Arthurium, StemType.Ridgeball),
-            //new Plant(FlowerType.Lilia, StemType.Weeper),
-
-            new Plant(FlowerType.Tahitian, StemType.PipeCactus),
-            new Plant(FlowerType.Fourpetal, StemType.TigerFern),
-            new Plant(FlowerType.Rosaceae, StemType.Bamboo),
-            new Plant(FlowerType.Arthurium, StemType.Bamboo),
-            new Plant(FlowerType.Jalapa, StemType.Fern),
-            new Plant(FlowerType.Bluestar, StemType.Lemonbush),
-            new Plant(FlowerType.Viola, StemType.BallCactus),
-            new Plant(FlowerType.Fragrant, StemType.Multiflora),
-            new Plant(FlowerType.Citrus, StemType.RareOak),
-            new Plant(FlowerType.Bluestar, StemType.Maranta),
-    };
-
-        public static void ReportUntestedPlantFormulasForCurrentPlants()
+        public static void ReportUntestedPlantFormulasForCurrentPlants(IEnumerable<Plant> currentPlants)
         {
             var plantCalculator = new PlantCalculator();
-            var untestedFormulas = plantCalculator.GetUntestedPlantFormulasForCurrentPlants(CurrentPlants)
+            var untestedFormulas = plantCalculator.GetUntestedPlantFormulasForCurrentPlants(currentPlants)
                 .OrderBy(x => x.PlantA.Flower)
                 .ThenBy(x => x.PlantA.Stem)
                 .ThenBy(x => x.PlantB.Flower)
@@ -119,7 +64,7 @@ namespace PlantTycoonHelper
             outFileFull.Close();
 
             var outFile = File.CreateText("formulas.txt");
-            var filteredFormulas = plantCalculator.FilterPlantFormulasOnlyBetweenCurrentPlants(CurrentPlants, untestedFormulas);
+            var filteredFormulas = plantCalculator.FilterPlantFormulasOnlyBetweenCurrentPlants(currentPlants, untestedFormulas);
             filteredFormulas.ToList()
                 .ForEach(x => outFile.WriteLine(
                     $"{x.PlantA.Flower.ToString()} {x.PlantA.Stem.ToString()} " +
@@ -127,6 +72,18 @@ namespace PlantTycoonHelper
                     $"= {x.Result.Flower.ToString()} {x.Result.Stem.ToString()}"));
             outFile.Flush();
             outFile.Close();
+
+            var outFileResults = File.CreateText("results.txt");
+            var results = untestedFormulas.Select(x => x.Result).ToList().Distinct(new PlantComparer())
+                .OrderBy(x => x.Flower)
+                .ThenBy(x => x.Stem);
+            outFileResults.WriteLine($"Results count: {results.Count()}\n");
+            outFileResults.WriteLine($"----------------------------------------------\n");
+            results.ToList()
+                .ForEach(x => outFileResults.WriteLine(
+                    $"{x.Flower.ToString()} {x.Stem.ToString()}"));
+            outFileResults.Flush();
+            outFileResults.Close();
         }
 
         public static void ReportUntestedSeedsInStorage()
