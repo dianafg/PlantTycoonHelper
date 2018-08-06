@@ -54,7 +54,8 @@ namespace PlantTycoonHelper
         protected Plant CreatePlantFromTextLine(string plantTextLine)
         {
             var splittedLine = plantTextLine.Split(" ");
-            if (splittedLine.Length != 2) throw new System.ArgumentException($"Invalid line from file: {plantTextLine}");
+            if (splittedLine.Length != 2 && splittedLine.Length != 3)
+                throw new System.ArgumentException($"Invalid line from file: {plantTextLine}");
             return new Plant(splittedLine[0], splittedLine[1]);
         }
     }

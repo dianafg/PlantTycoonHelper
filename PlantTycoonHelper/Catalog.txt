@@ -66,10 +66,7 @@ Lilia BallCactus
 
 Fragrant Lemonbush
 Tilia PearCactus
-Venomous Maranta
-Tahitian PipeCactus
 Arthurium PipeCactus
-Fabled PipeCactus
 Arthurium BallCactus
 Painted Maple
 Arthurium BallCactus
@@ -122,7 +119,6 @@ FourPetal Ananas
 Tilia PearCactus
 FourPetal Bamboo
 FourPetal Maranta
-Viola PearCactus
 Rosaceae Scandens
 Daisy Lemonbush
 Arthurium Fern
@@ -179,44 +175,82 @@ Venomous Fern
 Baccatus Glaber
 Painted Maple
 
-Mela PearCactus
-Rosaceae LemonBush
-Venomous Fanleaf
-Tahitian PipeCactus
-FourPetal Bamboo
-Rosaceae Maple
-Fabled Maranta
-Arthurium Bamboo
-Citrus RareOak
-Venomous Maranta
-Fabled PipeCactus
-Viola PearCactus
+Mela PearCactus 12
+Jalapa PipeCactus 12
+Fragrant Lemonbush 12
+Jalapa PearCactus 12
+Mela Glaber 12
+Mela Lemonbush 12
+Venomous PearCactus 12
+Citrus PipeCactus 12
+Venomous PipeCactus 12
+Blazing RareOak 12
+FourPetal BallCactus 12
+Jalapa Orchid 12
 
-Blazing Gladiatus
-Venomous PearCactus
-Blazing Fanleaf
-Mela Tigerfern
-Citrus BallCactus
-Mela Maranta
-Blazing Weeper
-Blazing PipeCactus
-Viola Fanleaf
-Venus Glaber
-FourPetal Lemonbush
-Tahitian Pitcher
+Aureus RareOak 13
+FourPetal PipeCactus 13
+Aureus Tigerfern 13
+Fabled Bamboo 13
+FourPetal Lemonbush 13
+Fabled Maple 13
+Mela BallCactus 13
+Aureus PipeCactus 13
+Aureus Fanleaf 13
+Aureus Tigerfern 13
+Citrus PearCactus 13
 
-Fragrant PipeCactus
-FourPetal Lemonbush
-FourPetal Fanleaf
-Nox Fanleaf
-Arthurium PearCactus
-Lilia Pitcher
-Lilia Pitcher
-Aureus Fanleaf
-Citrus Maple
-Arthurium Bamboo
-Venus Glaber
-Tahitian BallCactus
+Viola PearCactus 14
+Blazing Maple 14
+Fabled Maple 14
+Venomous RareOak 14
+Bluestar Reptans 14
+Aureus Tigerfern 14
+Rosaceae Maple 14
+Citrus PipeCactus 14
+Blazing Fanleaf 14
+Citrus BallCactus 14
+Fabled Fanleaf 14
+Blazing RareOak 14
+
+Tahitian BallCactus 20
+Venus Glaber 20
+Arthurium Bamboo 20
+Citrus Maple 20
+Aureus Fanleaf 20
+Lilia Pitcher 20
+Lilia Pitcher 20
+Arthurium PearCactus 20
+Nox Fanleaf 20
+FourPetal Fanleaf 20
+FourPetal Lemonbush 20
+Fragrant PipeCactus 20
+
+Tahitian Pitcher 21
+FourPetal Lemonbush 21
+Venus Glaber 21
+Viola Fanleaf 21
+Blazing PipeCactus 21
+Blazing Weeper 21
+Mela Maranta 21
+Citrus BallCactus 21
+Mela Tigerfern 21
+Blazing Fanleaf 21
+Venomous PearCactus 21
+Blazing Gladiatus 21
+
+Viola PearCactus 22
+Fabled PipeCactus 22
+Venomous Maranta 22
+Citrus RareOak 22
+Arthurium Bamboo 22
+Fabled Maranta 22
+Rosaceae Maple 22
+FourPetal Bamboo 22
+Tahitian PipeCactus 22
+Venomous Fanleaf 22
+Rosaceae LemonBush 22
+Mela PearCactus 22
 
 Aureus Astera
 Lilia Tigerfern
@@ -281,44 +315,6 @@ FourPetal BallCactus
 Blazing Ananas
 Jalapa Fanleaf
 Arthurium PipeCactus
-
-Blazing RareOak
-Fabled Fanleaf
-Citrus BallCactus
-Blazing Fanleaf
-Citrus PipeCactus
-Rosaceae Maple
-Aureus Tigerfern
-Bluestar Reptans
-Venomous RareOak
-Fabled Maple
-Blazing Maple
-Viola PearCactus
-
-Citrus PearCactus
-Aureus Tigerfern
-Aureus Fanleaf
-Aureus PipeCactus
-Mela BallCactus
-Fabled Maple
-FourPetal Lemonbush
-Fabled Bamboo
-Aureus Tigerfern
-FourPetal PipeCactus
-Aureus RareOak
-
-Jalapa Orchid
-FourPetal BallCactus
-Blazing RareOak
-Venomous PipeCactus
-Citrus PipeCactus
-Venomous PearCactus
-Mela Lemonbush
-Mela Glaber
-Jalapa PearCactus
-Fragrant Lemonbush
-Jalapa PipeCactus
-Mela PearCactus
 
 Venus Glaber
 Blazing PearCactus
@@ -447,7 +443,7 @@ Jalapa Astera
 Rosaceae Maranta
 
 Citrus Maple
-Blazing Fanleaf
+Blazing Fanleaf 14
 Citrus Reptans
 Daisy Lemonbush
 Fabled Gladiatus
@@ -579,7 +575,7 @@ Mystic Fern
 Bluestar Ananas
 Bluestar PipeCactus
 Viola Pitcher
-Viola PearCactus
+Viola PearCactus 14
 Fragrant Multiflora
 Painted PearCactus
 Arthurium PearCactus
@@ -753,6 +749,102 @@ Venomous Ridgeball
 Mela Ridgeball
 Tilia Astera
 
+Arthurium Multiflora
+Tahitian Multiflora
+Arthurium Ridgeball
+Tahitian Ridgeball
+Venus Ridgeball
+Venus Multiflora
+Lilia Ridgeball
+Baccatus Pitcher
 
+Tilia Tigerfern 60
+Baccatus Multiflora 60
+Baccatus Weeper 60
+Baccatus Ridgeball 60
+Tilia Pitcher 60
+Lilia Weeper 60
+Tilia Weeper 60
+Tilia Multiflora 60
+Tilia Ridgeball 60
 
+Daisy Astera
+Rosaceae Reptans
+
+Fabled Reptans
+Daisy Orchid
+Nox Gladiatus
+Mystic Orchid
+Viola Astera
+Fabled Grass
+
+Nox Grass
+Bluestar Grass
+Jalapa Reptans
+Daisy Fanleaf
+Nox Astera
+Mystic Gladiatus
+Nox Lemonbush
+Mystic Astera
+Painted Ananas
+Bluestar Fanleaf
+Fabled Scandens
+
+Bluestar Fern
+Daisy Maple
+Rosaceae Astera
+Daisy Gladiatus
+Daisy Ananas
+Bluestar Orchid
+Rosaceae Orchid
+Painted Grass
+Jalapa Scandens
+Painted Gladiatus
+Mystic Grass
+Nox Scandens
+
+Painted Maranta
+Painted Astera
+Bluestar Scandens
+Daisy Scandens
+Painted Orchid
+Daisy Fern
+Painted Fanleaf
+Mystic Scandens
+Nox Orchid
+Spotted Astera
+
+Fragrant Reptans
+Viola Reptans
+Painted Fern
+Spotted Fern
+Spotted Grass
+Daisy Bamboo
+Painted Tigerfern
+
+Painted Pitcher
+Painted Glaber
+Painted Ballcactus
+Painted Weeper
+Painted Multiflora
+Nox Reptans
+Mystic Reptans
+Daisy Reptans
+Blazing Reptans
+Painted Scandens
+Spotted Scandens
+
+Fragrant Scandens
+Blazing Scandens
+FourPetal Scandens
+Painted Reptans
+Nox BallCactus
+Aureus Scandens
+Aureus Reptans
+
+FourPetal Scandens
+Painted Reptans
+Daisy Scandens
+Painted Scandens
+Aureus Reptans
 

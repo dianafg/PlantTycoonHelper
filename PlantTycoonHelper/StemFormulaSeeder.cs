@@ -219,7 +219,7 @@ namespace PlantTycoonHelper
             stemCalculator.SetStemFormula(StemType.Maranta, StemType.PipeCactus, StemType.Bamboo);
             stemCalculator.SetStemFormula(StemType.Maranta, StemType.Pitcher, StemType.PipeCactus);
             stemCalculator.SetStemFormula(StemType.Maranta, StemType.RareOak, StemType.Bamboo);
-            stemCalculator.SetStemFormula(StemType.Maranta, StemType.Reptans, StemType.Bamboo);
+            stemCalculator.SetStemFormula(StemType.Maranta, StemType.Reptans, StemType.Astera);
             stemCalculator.SetStemFormula(StemType.Maranta, StemType.Ridgeball, StemType.PearCactus);
             stemCalculator.SetStemFormula(StemType.Maranta, StemType.Scandens, StemType.Gladiatus);
             stemCalculator.SetStemFormula(StemType.Maranta, StemType.TigerFern, StemType.RareOak);

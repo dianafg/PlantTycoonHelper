@@ -98,6 +98,29 @@ namespace PlantTycoonHelper
 
             return formulas.AsEnumerable();
         }
+
+        public IEnumerable<PlantFormula> GetFormulasWithResult(Plant result)
+        {
+            var formulas = new List<PlantFormula>();
+            using (dbContext = new PlantTycoonContext())
+            {
+                var flowerFormulasWithResult = dbContext.FlowerFormulas.Where(x => x.Result == result.Flower).ToList();
+                flowerFormulasWithResult.Add(new FlowerFormula(result.Flower, result.Flower));
+                var stemFormulasWithResult = dbContext.StemFormulas.Where(x => x.Result == result.Stem).ToList();
+                stemFormulasWithResult.Add(new StemFormula(result.Stem, result.Stem));
+                formulas =
+                    flowerFormulasWithResult.SelectMany(flowerFormula =>
+                        stemFormulasWithResult.Select(stemFormula =>
+                            new PlantFormula
+                            {
+                                PlantA = new Plant(flowerFormula.FlowerA, stemFormula.StemA, false),
+                                PlantB = new Plant(flowerFormula.FlowerB, stemFormula.StemB, false)
+                            })).ToList();
+            }
+            formulas.RemoveAll(x => plantComparer.Equals(x.PlantA, result) || plantComparer.Equals(x.PlantB, result));
+
+            return formulas;
+        }
     }
 
     public class SeedComparer : IEqualityComparer<Seed>

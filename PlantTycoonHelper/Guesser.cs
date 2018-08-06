@@ -1,57 +1,73 @@
 ﻿using PlantTycoon.Data;
 using PlantTycoon.Domain;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace PlantTycoonHelper
 {
     public class Guesser
     {
-        //public HashSet<Plant> PlantsFromSeedStorage { get; protected set; }
-
         public static List<Plant> CurrentPlants = new List<Plant>
         {
-            new Plant(FlowerType.Venomous, StemType.Multiflora),
+            new Plant(FlowerType.Fabled, StemType.Reptans),
             new Plant(FlowerType.Spotted, StemType.Reptans),
-            new Plant(FlowerType.Fabled, StemType.Ridgeball),
-            new Plant(FlowerType.Aureus, StemType.Multiflora),
-            new Plant(FlowerType.Lilia, StemType.Glaber),
-
-            new Plant(FlowerType.Citrus, StemType.Weeper),
-            new Plant(FlowerType.Blazing, StemType.Multiflora),
-            new Plant(FlowerType.Fourpetal, StemType.Ridgeball),
-            new Plant(FlowerType.Tilia, StemType.Fern),
-            new Plant(FlowerType.Mela, StemType.Multiflora),
-
-            new Plant(FlowerType.Venus, StemType.Pitcher),
-            new Plant(FlowerType.Mela, StemType.Weeper),
-            new Plant(FlowerType.Tilia, StemType.Glaber),
-            new Plant(FlowerType.Blazing, StemType.Ridgeball),
-            new Plant(FlowerType.Baccatus, StemType.Astera),
-
-
-            new Plant(FlowerType.Blazing, StemType.Orchid),
-            new Plant(FlowerType.Venus, StemType.Grass),
+            new Plant(FlowerType.Jalapa, StemType.Reptans),
             new Plant(FlowerType.Painted, StemType.RareOak),
+            new Plant(FlowerType.Viola, StemType.Scandens),
+
+            new Plant(FlowerType.Fourpetal, StemType.Reptans),
+            new Plant(FlowerType.Bluestar, StemType.Reptans),
+            new Plant(FlowerType.Fragrant, StemType.Scandens),
+            new Plant(FlowerType.Rosaceae, StemType.Reptans),
+            new Plant(FlowerType.Nox, StemType.Orchid),
+
+            new Plant(FlowerType.Painted, StemType.Ridgeball),
+            new Plant(FlowerType.Jalapa, StemType.Scandens),
+            new Plant(FlowerType.Daisy, StemType.Grass),
+            new Plant(FlowerType.Painted, StemType.Fanleaf),
+            new Plant(FlowerType.Nox, StemType.Scandens),
+
+            new Plant(FlowerType.Fragrant, StemType.Scandens),
+            new Plant(FlowerType.Venus, StemType.Ridgeball),
+            new Plant(FlowerType.Venus, StemType.Grass),
             new Plant(FlowerType.Citrus, StemType.Scandens),
             new Plant(FlowerType.Venomous, StemType.Scandens),
             new Plant(FlowerType.Tilia, StemType.Maranta),
 
-            new Plant(FlowerType.Arthurium, StemType.Weeper),
-            new Plant(FlowerType.Tilia, StemType.Gladiatus),
-            new Plant(FlowerType.Aureus, StemType.Ridgeball),
-            new Plant(FlowerType.Citrus, StemType.Multiflora),
-            new Plant(FlowerType.Citrus, StemType.Ridgeball),
-            new Plant(FlowerType.Venomous, StemType.Ridgeball),
-            new Plant(FlowerType.Mela, StemType.Ridgeball),
-            new Plant(FlowerType.Tilia, StemType.Astera),
+            new Plant(FlowerType.Bluestar, StemType.Scandens),
+            new Plant(FlowerType.Daisy, StemType.Scandens),
+            new Plant(FlowerType.Mystic, StemType.Scandens),
+            new Plant(FlowerType.Spotted, StemType.Astera),
+            new Plant(FlowerType.Fragrant, StemType.Reptans),
+            new Plant(FlowerType.Viola, StemType.Reptans),
+            new Plant(FlowerType.Spotted, StemType.Fern),
+            new Plant(FlowerType.Spotted, StemType.Grass),
+            new Plant(FlowerType.Painted, StemType.TigerFern),
+            new Plant(FlowerType.Painted, StemType.Pitcher),
+            new Plant(FlowerType.Painted, StemType.Glaber),
+            new Plant(FlowerType.Painted, StemType.BallCactus),
+            new Plant(FlowerType.Painted, StemType.Weeper),
+            new Plant(FlowerType.Painted, StemType.Multiflora),
+            new Plant(FlowerType.Nox, StemType.Reptans),
+            new Plant(FlowerType.Mystic, StemType.Reptans),
+            new Plant(FlowerType.Daisy, StemType.Reptans),
+            new Plant(FlowerType.Blazing, StemType.Reptans),
+            new Plant(FlowerType.Painted, StemType.Scandens),
+            new Plant(FlowerType.Spotted, StemType.Scandens),
+            new Plant(FlowerType.Fragrant, StemType.Scandens),
+            new Plant(FlowerType.Blazing, StemType.Scandens),
+            new Plant(FlowerType.Fourpetal, StemType.Scandens),
+            new Plant(FlowerType.Painted, StemType.Reptans),
+            new Plant(FlowerType.Nox, StemType.BallCactus),
+            new Plant(FlowerType.Aureus, StemType.Scandens),
 
+            new Plant(FlowerType.Fourpetal, StemType.Scandens),
+            new Plant(FlowerType.Painted, StemType.Reptans),
+            new Plant(FlowerType.Daisy, StemType.Scandens),
+            new Plant(FlowerType.Painted, StemType.Scandens),
 
-            //new Plant(FlowerType.Arthurium, StemType.Multiflora),
-            //new Plant(FlowerType.Arthurium, StemType.Ridgeball),
-            //new Plant(FlowerType.Lilia, StemType.Weeper),
+            //Bought:
+            //14 -> Scandens
         };
 
         public static IEnumerable<Plant> GetPlantsFromSeedStorage()

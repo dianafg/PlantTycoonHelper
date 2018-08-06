@@ -32,17 +32,21 @@ namespace PlantTycoonHelper
             catalog = new Catalog();
 
             //ReseedFormulas();
+
             catalog.Reseed();
-            //seedSeeder.Reseed();
+            seedSeeder.Reseed();
 
             //LoopForFlowerOrStemType();
 
             var currentPlants = Guesser.CurrentPlants;
             currentPlants.AddRange(Guesser.GetPlantsFromSeedStorage());
-
             ReportUntestedPlantFormulasForCurrentPlants(currentPlants);
-            ReportUntestedSeedsInStorage();
+
+            //ReportUntestedSeedsInStorage();
+
             ReportUntestedPlants();
+
+            //ReportFormulasForMissingResults();
         }
 
         public static void ReportUntestedPlantFormulasForCurrentPlants(IEnumerable<Plant> currentPlants)
@@ -127,6 +131,46 @@ namespace PlantTycoonHelper
                     if (x.Stem != lastStem) outFile.WriteLine($"----------------");
                     lastStem = x.Stem;
                     outFile.WriteLine($"{x.Flower.ToString()} {x.Stem.ToString()}");
+                });
+
+            outFile.Flush();
+            outFile.Close();
+        }
+
+        public static void ReportFormulasForMissingResults()
+        {
+            var missingResults = new List<Plant>
+            {
+                new Plant(FlowerType.Baccatus, StemType.Reptans),
+                new Plant(FlowerType.Baccatus, StemType.Scandens),
+                new Plant(FlowerType.Lilia, StemType.Reptans),
+                new Plant(FlowerType.Tahitian, StemType.Reptans),
+                new Plant(FlowerType.Tilia, StemType.Reptans),
+                new Plant(FlowerType.Tilia, StemType.Scandens),
+                new Plant(FlowerType.Venus, StemType.Reptans),
+                new Plant(FlowerType.Spotted, StemType.Glaber),
+                new Plant(FlowerType.Spotted, StemType.Multiflora),
+                new Plant(FlowerType.Spotted, StemType.Pitcher),
+                new Plant(FlowerType.Spotted, StemType.Ridgeball),
+                new Plant(FlowerType.Spotted, StemType.TigerFern),
+                new Plant(FlowerType.Spotted, StemType.Weeper),
+            };
+
+            var formulas = new Dictionary<Plant, IEnumerable<PlantFormula>>();
+
+            var plantCalculator = new PlantCalculator();
+            missingResults.ForEach(x => formulas.Add(x, plantCalculator.GetFormulasWithResult(x)));
+
+            var outFile = File.CreateText("missing.txt");
+
+            outFile.WriteLine($"Missing plants count: {missingResults.Count()}\n");
+
+            formulas.ToList()
+                .ForEach(x =>
+                {
+                    outFile.WriteLine($"----------------------------------------------\n");
+                    outFile.WriteLine($"{x.Key.Flower.ToString()} {x.Key.Stem.ToString()}\n");
+                    x.Value.ToList().ForEach(y => outFile.WriteLine($"{y.PlantA.Flower.ToString()} {y.PlantA.Stem.ToString()} x {y.PlantB.Flower.ToString()} {y.PlantB.Stem.ToString()}"));
                 });
 
             outFile.Flush();

@@ -90,7 +90,6 @@ namespace PlantTycoonHelper
             flowerCalculator.SetFlowerFormula(FlowerType.Blazing, FlowerType.Jalapa, FlowerType.Fragrant);
             flowerCalculator.SetFlowerFormula(FlowerType.Blazing, FlowerType.Lilia, FlowerType.Citrus);
             flowerCalculator.SetFlowerFormula(FlowerType.Blazing, FlowerType.Mela, FlowerType.Aureus);
-            flowerCalculator.SetFlowerFormula(FlowerType.Blazing, FlowerType.Mela, FlowerType.Aureus);
             flowerCalculator.SetFlowerFormula(FlowerType.Blazing, FlowerType.Nox, FlowerType.Viola);
             flowerCalculator.SetFlowerFormula(FlowerType.Blazing, FlowerType.Mystic, FlowerType.Jalapa);
             flowerCalculator.SetFlowerFormula(FlowerType.Blazing, FlowerType.Painted, FlowerType.Rosaceae);
